@@ -1,105 +1,55 @@
+
 import Countdown from "@/components/Countdown";
 import Location from "@/components/Location";
 import RSVP from "@/components/RSVP";
 
 export default function Home() {
   return (
-    <main className="bg-[#0a0a0a] text-white overflow-hidden">
+    <main className="bg-black text-white scroll-smooth">
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0 bg-[url('src/app/suret.jpeg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/60" />
 
-        {/* IMAGE */}
-        <div className="absolute inset-0 bg-[url('src/app/suret.jpeg')] bg-cover bg-center scale-105" />
-
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
-
-        {/* CONTENT */}
-        <div className="relative z-10 text-center px-6">
-
-          <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-6">
-            Wedding Invitation
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-extralight tracking-wide">
+        <div className="relative text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-light">
             Aqsezim
           </h1>
+          <h1 className="text-4xl md:text-6xl font-light">
+            QYZ UZATU
+          </h1>
+          <p className="mt-4 text-neutral-300">24 June 2026</p>
 
-          <p className="mt-4 text-neutral-300 text-lg">
-            Qyz Uzatu
-          </p>
-
-          <div className="w-24 h-[1px] bg-white/40 mx-auto my-8" />
-
-          <p className="text-neutral-400 tracking-[4px] uppercase text-sm">
-            24 June 2026 • 17:00
-          </p>
-
-          <p className="mt-16 animate-bounce text-neutral-400 text-sm">
+          <p className="mt-10 text-xs animate-bounce text-neutral-400">
             ↓ Scroll
           </p>
         </div>
       </section>
 
       {/* INVITATION */}
-      <section className="py-32 px-6 bg-[#111111]">
-        <div className="max-w-2xl mx-auto text-center">
-
-          <p className="uppercase tracking-[6px] text-neutral-500 text-sm mb-6">
-            Dear Guests
+      <section className="min-h-screen flex items-center justify-center px-6 py-20">
+        <div className="max-w-md text-center">
+          <h2 className="text-2xl mb-4">Дорогие гости</h2>
+          <p className="text-neutral-300 leading-relaxed">
+            Мы рады пригласить вас разделить с нами один из самых важных дней нашей жизни.
           </p>
-
-          <h2 className="text-4xl font-light mb-10">
-            Мы рады пригласить вас
-          </h2>
-
-          <p className="text-neutral-300 leading-8 text-lg">
-            Разделите с нами один из самых важных и счастливых дней нашей жизни.
-            Будем счастливы видеть вас на нашем торжестве.
-          </p>
-
         </div>
       </section>
 
       {/* EVENT */}
-      <section className="py-32 px-6 bg-black">
-
-        <div className="max-w-xl mx-auto text-center border border-white/10 rounded-[40px] p-12 bg-white/[0.03] backdrop-blur-sm">
-
-          <p className="uppercase tracking-[6px] text-neutral-500 text-sm mb-6">
-            Event Details
-          </p>
-
-          <h2 className="text-4xl font-light mb-8">
-            Дата и время
-          </h2>
-
-          <p className="text-2xl text-neutral-200">
-            24 June 2026
-          </p>
-
-          <p className="mt-3 text-neutral-400 text-lg">
-            17:00
-          </p>
-
+      <section className="min-h-screen flex items-center justify-center px-6 bg-neutral-950">
+        <div className="text-center">
+          <h2 className="text-xl mb-4">Дата и время</h2>
+          <p className="text-neutral-300">24 June 2026</p>
+          <p className="text-neutral-400">17:00</p>
         </div>
       </section>
 
-      {/* LOCATION */}
-      <Location />
-
-      {/* RSVP */}
-      <RSVP />
-
-      {/* COUNTDOWN */}
+      {/* COUNTDOWN (в конце логического блока) */}
       <Countdown />
-
-      {/* FOOTER */}
-      <footer className="py-10 text-center text-neutral-500 text-sm border-t border-white/10">
-        Aqsezim Qyz Uzatu • 2026
-      </footer>
-
+      <Location />
+      <RSVP />
     </main>
   );
 }
