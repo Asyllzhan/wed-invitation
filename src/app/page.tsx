@@ -8,7 +8,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('src/app/suret.jpeg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative text-center px-6">
