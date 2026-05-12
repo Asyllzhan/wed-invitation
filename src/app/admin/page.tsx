@@ -5,7 +5,7 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import * as XLSX from "xlsx";
 
-const ADMIN_PASSWORD = "1234";
+const ADMIN_PASSWORD = "асек2005";
 
 export default function AdminPage() {
   const [password, setPassword] = useState("");
@@ -26,8 +26,16 @@ export default function AdminPage() {
     if (authorized) fetchGuests();
   }, [authorized]);
 
-  const comingCount = guests.filter((g) => g.status === "coming").length;
-  const notComingCount = guests.filter((g) => g.status === "not_coming").length;
+  const comingGuests = guests.filter((g) => g.status === "coming");
+
+const totalPeople = comingGuests.reduce((total, guest) => {
+  return total + (guest.withWhom === "with_spouse" ? 2 : 1);
+}, 0);
+
+const notComingCount = guests.filter(
+  (g) => g.status === "not_coming"
+).length;
+ 
 
   const exportExcel = () => {
     const worksheet = XLSX.utils.json_to_sheet(guests);
@@ -73,7 +81,7 @@ export default function AdminPage() {
 
       {/* STATS */}
       <div className="mb-6 p-4 border rounded space-y-1">
-        <p>✅ Придут: {comingCount}</p>
+        <p>✅ Придут гостей: {totalPeople}</p>
         <p>❌ Не придут: {notComingCount}</p>
         <p>👥 Всего: {guests.length}</p>
       </div>
@@ -88,17 +96,14 @@ export default function AdminPage() {
 
       {/* LIST */}
       <div className="space-y-3">
-  {[...guests].reverse().map((g) => (
-    <div
-      key={g.id}
-      className="p-3 border border-white/20 rounded"
-    >
-      <p><b>Name:</b> {g.name}</p>
-      <p><b>Status:</b> {g.status}</p>
-      <p><b>With:</b> {g.withWhom}</p>
-    </div>
-  ))}
-</div>
+        {guests.map((g) => (
+          <div key={g.id} className="p-3 border border-white/20 rounded">
+            <p><b>Name:</b> {g.name}</p>
+            <p><b>Status:</b> {g.status}</p>
+            <p><b>With:</b> {g.withWhom}</p>
+          </div>
+        ))}
+      </div>
 
     </div>
   );
