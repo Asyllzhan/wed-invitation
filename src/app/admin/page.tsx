@@ -88,14 +88,17 @@ export default function AdminPage() {
 
       {/* LIST */}
       <div className="space-y-3">
-        {guests.map((g) => (
-          <div key={g.id} className="p-3 border border-white/20 rounded">
-            <p><b>Name:</b> {g.name}</p>
-            <p><b>Status:</b> {g.status}</p>
-            <p><b>With:</b> {g.withWhom}</p>
-          </div>
-        ))}
-      </div>
+  {[...guests].reverse().map((g) => (
+    <div
+      key={g.id}
+      className="p-3 border border-white/20 rounded"
+    >
+      <p><b>Name:</b> {g.name}</p>
+      <p><b>Status:</b> {g.status}</p>
+      <p><b>With:</b> {g.withWhom}</p>
+    </div>
+  ))}
+</div>
 
     </div>
   );
