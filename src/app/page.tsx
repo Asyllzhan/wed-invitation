@@ -16,41 +16,41 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage: "url('/aq5.jpeg')",
+            backgroundImage: "url('/aq6.jpeg')",
           }}
         />
-{/* LIGHT OVERLAY (меняем черный фон на светлый или убираем вовсе) */}
-        <div className="absolute inset-0 bg-white/30" /> 
 
-        {/* CONTENT */}
-        <div className="relative z-10 text-center px-6 mt-40 md:mt-0"> 
-          
-          <p className="uppercase tracking-[8px] text-sm text-neutral-600 mb-10">
-            ТОЙҒА ШАҚЫРТУ
-          </p>
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/55" />
+{/* CONTENT */}
+<div className="relative z-10 text-center px-6 mt-40 md:mt-0"> 
+  {/* mt-40 опустит текст вниз на мобильных, md:mt-0 вернет как было на компьютерах */}
 
-          <h1 
-            className="text-7xl md:text-9xl text-black" 
-            style={{ fontFamily: "var(--font-kz-ceremonious)" }}
-          >
-            Ақсезім
-          </h1>
+  <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-30">
+    ТОЙҒА ШАҚЫРТУ
+  </p>
 
-          <p className="mt-6 text-neutral-800 text-2xl md:text-2xl tracking-[4px] uppercase font-light">
-            Qyz Uzatu
-          </p>
+  <h1 
+    className="text-7xl md:text-9xl text-white drop-shadow-md"
+    style={{ fontFamily: "var(--font-kz-ceremonious)" }}
+  >
+    Ақсезім
+  </h1>
 
-          {/* Линия теперь темная */}
-          <div className="w-24 h-[1px] bg-black/20 mx-auto my-8" />
+  <p className="mt-6 text-neutral-200 text-2xl md:text-2xl tracking-[4px] uppercase font-light">
+    Qyz Uzatu
+  </p>
 
-          <p className="text-neutral-700 tracking-[4px] uppercase text-sm">
-            24 Маусым 2026 • 18:00
-          </p>
+  <div className="w-24 h-[1px] bg-white/40 mx-auto my-8" />
 
-          <p className="mt-10 animate-bounce text-neutral-500 text-sm">
-            ↓ Астыға айналдырыңыз ↓
-          </p>
-        </div>
+  <p className="text-neutral-300 tracking-[4px] uppercase text-sm">
+    24 Маусым 2026 • 19:00
+  </p>
+
+  <p className="mt-10 animate-bounce text-neutral-400 text-sm">
+    ↓ Астыға айналдырыңыз ↓
+  </p>
+</div>
       </section>
 
       {/* ================= PAGE 2 ================= */}
