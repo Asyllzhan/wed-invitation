@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Countdown() {
-  const weddingDate = new Date("2026-08-25T17:00:00");
+  const weddingDate = new Date("2026-06-24T18:00:00");
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -18,10 +18,22 @@ export default function Countdown() {
       const distance = weddingDate.getTime() - now;
 
       setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((distance / (1000 * 60)) % 60),
-        seconds: Math.floor((distance / 1000) % 60),
+        days: Math.max(
+          0,
+          Math.floor(distance / (1000 * 60 * 60 * 24))
+        ),
+        hours: Math.max(
+          0,
+          Math.floor((distance / (1000 * 60 * 60)) % 24)
+        ),
+        minutes: Math.max(
+          0,
+          Math.floor((distance / (1000 * 60)) % 60)
+        ),
+        seconds: Math.max(
+          0,
+          Math.floor((distance / 1000) % 60)
+        ),
       });
     }, 1000);
 
@@ -29,34 +41,63 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black text-white px-6">
-      <div className="text-center">
-        <h2 className="text-xl mb-10 tracking-widest uppercase text-neutral-400">
-          Countdown to Wedding
-        </h2>
+    <div className="text-center text-black">
 
-        <div className="grid grid-cols-4 gap-4 text-center">
-          <div>
-            <p className="text-3xl font-light">{timeLeft.days}</p>
-            <p className="text-xs text-neutral-400">Days</p>
-          </div>
+      <h2 className="text-4xl italic mb-10 font-light">
+        Countdown
+      </h2>
 
-          <div>
-            <p className="text-3xl font-light">{timeLeft.hours}</p>
-            <p className="text-xs text-neutral-400">Hours</p>
-          </div>
+      <div className="grid grid-cols-4 gap-3">
 
-          <div>
-            <p className="text-3xl font-light">{timeLeft.minutes}</p>
-            <p className="text-xs text-neutral-400">Min</p>
-          </div>
+        {/* DAYS */}
+        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
 
-          <div>
-            <p className="text-3xl font-light">{timeLeft.seconds}</p>
-            <p className="text-xs text-neutral-400">Sec</p>
-          </div>
+          <p className="text-3xl font-light">
+            {timeLeft.days}
+          </p>
+
+          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
+            Days
+          </p>
         </div>
+
+        {/* HOURS */}
+        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
+
+          <p className="text-3xl font-light">
+            {timeLeft.hours}
+          </p>
+
+          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
+            Hours
+          </p>
+        </div>
+
+        {/* MINUTES */}
+        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
+
+          <p className="text-3xl font-light">
+            {timeLeft.minutes}
+          </p>
+
+          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
+            Min
+          </p>
+        </div>
+
+        {/* SECONDS */}
+        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
+
+          <p className="text-3xl font-light">
+            {timeLeft.seconds}
+          </p>
+
+          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
+            Sec
+          </p>
+        </div>
+
       </div>
-    </section>
+    </div>
   );
 }

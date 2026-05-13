@@ -13,98 +13,289 @@ export default function AdminPage() {
 
   const [guests, setGuests] = useState<any[]>([]);
 
+  // FETCH DATA
   const fetchGuests = async () => {
     const snapshot = await getDocs(collection(db, "guests"));
+
     const data = snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
+
     setGuests(data);
   };
 
   useEffect(() => {
-    if (authorized) fetchGuests();
+    if (authorized) {
+      fetchGuests();
+    }
   }, [authorized]);
 
-  const comingGuests = guests.filter((g) => g.status === "coming");
+  // STATS
+  const comingAlone = guests.filter(
+    (g) => g.attendance === "coming"
+  ).length;
 
-const totalPeople = comingGuests.reduce((total, guest) => {
-  return total + (guest.withWhom === "with_spouse" ? 2 : 1);
-}, 0);
+  const comingWithSpouse = guests.filter(
+    (g) => g.attendance === "with_spouse"
+  ).length;
 
-const notComingCount = guests.filter(
-  (g) => g.status === "not_coming"
-).length;
- 
+  const notComing = guests.filter(
+    (g) => g.attendance === "not_coming"
+  ).length;
 
+  // TOTAL PEOPLE
+  const totalPeople =
+    comingAlone + comingWithSpouse * 2;
+
+  // EXPORT
   const exportExcel = () => {
-    const worksheet = XLSX.utils.json_to_sheet(guests);
+    const formatted = guests.map((g) => ({
+      "Аты-жөні": g.name,
+      "Қатысуы":
+        g.attendance === "coming"
+          ? "Қатысады"
+          : g.attendance === "with_spouse"
+          ? "Жұбайымен келеді"
+          : "Келе алмайды",
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(formatted);
+
     const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Guests");
-    XLSX.writeFile(workbook, "wedding-guests.xlsx");
+
+    XLSX.utils.book_append_sheet(
+      workbook,
+      worksheet,
+      "Guests"
+    );
+
+    XLSX.writeFile(workbook, "aqsezim-guests.xlsx");
   };
 
-  // 🔐 LOGIN SCREEN
+  // LOGIN
   if (!authorized) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <div className="space-y-4 text-center">
-          <h1 className="text-xl">Admin Login</h1>
+      <div
+        className="
+          min-h-screen
+          flex
+          items-center
+          justify-center
+          bg-[#e6dfd5]
+          px-6
+        "
+      >
+        <div
+          className="
+            w-full
+            max-w-sm
+            bg-white/50
+            backdrop-blur-md
+            border
+            border-[#b68b3c]/30
+            rounded-[40px]
+            p-8
+            text-center
+          "
+        >
+
+          <h1 className="text-4xl italic font-light text-black mb-8">
+            Admin
+          </h1>
 
           <input
             type="password"
-            className="p-2 rounded bg-white/10 border"
-            placeholder="Password"
+            placeholder="Құпия сөз"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="
+              w-full
+              px-5
+              py-4
+              rounded-full
+              bg-white/70
+              border
+              border-[#b68b3c]/30
+              outline-none
+              text-black
+              mb-5
+            "
           />
 
           <button
-            onClick={() => setAuthorized(password === ADMIN_PASSWORD)}
-            className="px-4 py-2 border rounded"
+            onClick={() =>
+              setAuthorized(password === ADMIN_PASSWORD)
+            }
+            className="
+              w-full
+              py-4
+              rounded-full
+              bg-[#b68b3c]
+              text-white
+              italic
+              text-lg
+            "
           >
-            Enter
+            Кіру
           </button>
 
           {password && password !== ADMIN_PASSWORD && (
-            <p className="text-red-400 text-sm">Wrong password</p>
+            <p className="text-red-500 text-sm mt-4 italic">
+              Қате құпия сөз
+            </p>
           )}
+
         </div>
       </div>
     );
   }
 
-  // 📊 ADMIN DASHBOARD
+  // DASHBOARD
   return (
-    <div className="p-10 bg-black text-white min-h-screen">
+    <div className="min-h-screen bg-[#e6dfd5] p-5">
 
-      <h1 className="text-2xl mb-6">Admin Panel</h1>
+      {/* HEADER */}
+      <div className="max-w-5xl mx-auto">
 
-      {/* STATS */}
-      <div className="mb-6 p-4 border rounded space-y-1">
-        <p>✅ Придут гостей: {totalPeople}</p>
-        <p>❌ Не придут: {notComingCount}</p>
-        <p>👥 Всего: {guests.length}</p>
-      </div>
+        <div className="flex items-center justify-between mb-8">
 
-      {/* EXPORT */}
-      <button
-        onClick={exportExcel}
-        className="mb-6 px-4 py-2 border rounded hover:bg-white hover:text-black"
-      >
-        Export Excel
-      </button>
+          <div>
+            <h1 className="text-5xl italic font-light text-black">
+              Guests
+            </h1>
 
-      {/* LIST */}
-      <div className="space-y-3">
-        {guests.map((g) => (
-          <div key={g.id} className="p-3 border border-white/20 rounded">
-            <p><b>Name:</b> {g.name}</p>
-            <p><b>Status:</b> {g.status}</p>
-            <p><b>With:</b> {g.withWhom}</p>
+            <p className="text-neutral-600 italic mt-2">
+              Aqsezim Qyz Uzatu
+            </p>
           </div>
-        ))}
-      </div>
 
+          <button
+            onClick={exportExcel}
+            className="
+              px-6
+              py-3
+              rounded-full
+              bg-[#b68b3c]
+              text-white
+              italic
+            "
+          >
+            Excel
+          </button>
+
+        </div>
+
+        {/* STATS */}
+        <div className="grid md:grid-cols-4 gap-4 mb-8">
+
+          {/* TOTAL */}
+          <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
+
+            <p className="text-neutral-500 italic mb-2">
+              Барлығы
+            </p>
+
+            <h2 className="text-4xl font-light text-black">
+              {guests.length}
+            </h2>
+          </div>
+
+          {/* COMING */}
+          <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
+
+            <p className="text-neutral-500 italic mb-2">
+              Қатысады
+            </p>
+
+            <h2 className="text-4xl font-light text-black">
+              {comingAlone}
+            </h2>
+          </div>
+
+          {/* WITH SPOUSE */}
+          <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
+
+            <p className="text-neutral-500 italic mb-2">
+              Жұбайымен
+            </p>
+
+            <h2 className="text-4xl font-light text-black">
+              {comingWithSpouse}
+            </h2>
+          </div>
+
+          {/* TOTAL PEOPLE */}
+          <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
+
+            <p className="text-neutral-500 italic mb-2">
+              Адам саны
+            </p>
+
+            <h2 className="text-4xl font-light text-black">
+              {totalPeople}
+            </h2>
+          </div>
+
+        </div>
+
+        {/* NOT COMING */}
+        <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md mb-8">
+
+          <p className="text-neutral-500 italic mb-2">
+            Келе алмайды
+          </p>
+
+          <h2 className="text-4xl font-light text-black">
+            {notComing}
+          </h2>
+        </div>
+
+        {/* GUESTS LIST */}
+        <div className="space-y-4">
+
+          {guests.map((g) => (
+            <div
+              key={g.id}
+              className="
+                bg-white/60
+                rounded-[30px]
+                p-5
+                backdrop-blur-md
+              "
+            >
+
+              <div className="flex items-center justify-between gap-4">
+
+                <div>
+
+                  <h2 className="text-2xl italic text-black">
+                    {g.name}
+                  </h2>
+
+                  <p className="text-neutral-600 mt-2">
+
+                    {g.attendance === "coming" &&
+                      "✅ ҚАТЫСАДЫ"}
+
+                    {g.attendance === "with_spouse" &&
+                      "💍 ЖҰБАЙЫМЕН КЕЛЕДІ"}
+
+                    {g.attendance === "not_coming" &&
+                      "❌ КЕЛЕ АЛМАЙДЫ"}
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+
+      </div>
     </div>
   );
 }

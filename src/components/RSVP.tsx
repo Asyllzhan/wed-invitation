@@ -6,8 +6,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 export default function RSVP() {
   const [name, setName] = useState("");
-  const [status, setStatus] = useState("coming");
-  const [withWhom, setWithWhom] = useState("alone");
+  const [attendance, setAttendance] = useState("coming");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -19,8 +18,7 @@ export default function RSVP() {
 
       await addDoc(collection(db, "guests"), {
         name,
-        status,
-        withWhom,
+        attendance,
         createdAt: new Date(),
       });
 
@@ -28,77 +26,155 @@ export default function RSVP() {
       setName("");
     } catch (error) {
       console.log(error);
-      alert("Ошибка отправки");
+      alert("Қате пайда болды");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black text-white px-6 py-20">
-      <div className="max-w-md w-full text-center">
+    <div className="w-full text-black">
 
-        <h2 className="text-2xl mb-8 tracking-widest uppercase text-neutral-300">
-          RSVP
-        </h2>
+      {sent ? (
+        <div className="text-center">
 
-        {sent ? (
+          <p className="text-green-700 text-lg italic mb-6">
+            Жауабыңыз сәтті жіберілді 💍
+          </p>
+
+          <button
+            onClick={() => setSent(false)}
+            className="text-sm italic underline text-neutral-600"
+          >
+            Қайта жіберу
+          </button>
+
+        </div>
+      ) : (
+        <div className="space-y-8">
+
+          {/* NAME TITLE */}
           <div>
-            <p className="text-green-400 mb-4">
-              Спасибо! Ваш ответ сохранён 💍
+
+            <p className="text-center text-lg italic mb-4">
+              АТЫ-ЖӨНІҢІЗ:
             </p>
 
-            <button
-              onClick={() => setSent(false)}
-              className="text-sm underline text-neutral-400"
-            >
-              Отправить ещё раз
-            </button>
-          </div>
-        ) : (
-          <div className="space-y-4">
-
-            {/* NAME */}
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Ваше имя"
-              className="w-full p-3 rounded bg-white/10 border border-white/20"
+              placeholder="ЕСІМ(ДЕР)ІҢІЗ"
+              className="
+                w-full
+                px-5
+                py-4
+                rounded-full
+                bg-white/60
+                border
+                border-[#b68b3c]/40
+                backdrop-blur-sm
+                outline-none
+                text-black
+                placeholder:text-neutral-500
+              "
             />
 
-            {/* STATUS */}
-            <select
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-              className="w-full p-3 rounded bg-white/10 border border-white/20"
-            >
-              <option value="coming">Приду</option>
-              <option value="not_coming">Не приду</option>
-            </select>
-
-            {/* WITH WHOM */}
-            <select
-              value={withWhom}
-              onChange={(e) => setWithWhom(e.target.value)}
-              className="w-full p-3 rounded bg-white/10 border border-white/20"
-            >
-              <option value="alone">Один</option>
-              <option value="with_spouse">С супругой/супругом</option>
-            </select>
-
-            {/* BUTTON */}
-            <button
-              onClick={handleSubmit}
-              disabled={loading}
-              className="w-full py-3 rounded-full border border-white hover:bg-white hover:text-black transition"
-            >
-              {loading ? "Отправка..." : "Отправить"}
-            </button>
+            <p className="text-sm italic text-neutral-600 mt-4 leading-relaxed">
+              (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ,
+              ЕКЕУІҢІЗ ДЕ ЕСІМДЕРІҢІЗДІ
+              ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
+            </p>
 
           </div>
-        )}
 
-      </div>
-    </section>
+          {/* ATTENDANCE */}
+          <div>
+
+            <p className="text-left text-lg italic mb-5">
+              ҚАТЫСУЫҢЫЗ:
+            </p>
+
+            <div className="space-y-4">
+
+              {/* OPTION 1 */}
+              <label className="flex items-center gap-4 cursor-pointer">
+
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="coming"
+                  checked={attendance === "coming"}
+                  onChange={(e) => setAttendance(e.target.value)}
+                  className="w-5 h-5 accent-[#b68b3c]"
+                />
+
+                <span className="italic text-lg">
+                  КЕЛЕМІН
+                </span>
+
+              </label>
+
+              {/* OPTION 2 */}
+              <label className="flex items-center gap-4 cursor-pointer">
+
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="with_spouse"
+                  checked={attendance === "with_spouse"}
+                  onChange={(e) => setAttendance(e.target.value)}
+                  className="w-5 h-5 accent-[#b68b3c]"
+                />
+
+                <span className="italic text-lg">
+                  ЖҰБАЙЫММЕН БАРАМЫН
+                </span>
+
+              </label>
+
+              {/* OPTION 3 */}
+              <label className="flex items-center gap-4 cursor-pointer">
+
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="not_coming"
+                  checked={attendance === "not_coming"}
+                  onChange={(e) => setAttendance(e.target.value)}
+                  className="w-5 h-5 accent-[#b68b3c]"
+                />
+
+                <span className="italic text-lg">
+                  КЕЛЕ АЛМАЙМЫН
+                </span>
+
+              </label>
+
+            </div>
+          </div>
+
+          {/* BUTTON */}
+          <button
+            onClick={handleSubmit}
+            disabled={loading}
+            className="
+              w-full
+              py-4
+              rounded-full
+              bg-[#b68b3c]
+              text-white
+              text-lg
+              italic
+              transition
+              hover:scale-[1.02]
+              active:scale-[0.98]
+            "
+          >
+            {loading ? "Жіберілуде..." : "Жіберу"}
+          </button>
+
+        </div>
+      )}
+    </div>
   );
 }
