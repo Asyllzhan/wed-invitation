@@ -16,7 +16,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage: "url('/aq2.jpeg')",
+            backgroundImage: "url('/aq4.jpeg')",
           }}
         />
 
@@ -84,15 +84,16 @@ export default function Home() {
 
     <div className="h-20" />
 
-    <p className="text-xl italic">
-      Сіздерді аяулы қызымыз
-    </p>
+    <p className="text-xl italic mb-6"> 
+  {/* mb-6 добавит отступ снизу от этой строки */}
+  Сіздерді аяулы қызымыз
+</p>
 
-    <h1 
-  className="text-[48px] leading-[1.1] md:text-8xl text-[#b68b3c] drop-shadow-md whitespace-nowrap"
+<h1 
+  className="text-[48px] leading-[1.1] md:text-[100px] text-[#b68b3c] drop-shadow-md whitespace-nowrap mt-4 mb-4"
   style={{ 
     fontFamily: "var(--font-kz-ceremonious)",
-    marginLeft: "-5px", // Небольшая коррекция, чтобы первая буква визуально была по центру
+    marginLeft: "-5px",
     marginRight: "-5px"
   }}
 >
