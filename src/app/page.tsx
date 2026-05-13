@@ -1,10 +1,12 @@
 import Countdown from "@/components/Countdown";
 import RSVP from "@/components/RSVP";
+import MusicPlayer from "@/components/MusicPlayer";
+import { motion } from "framer-motion"; // Если установил ран
 
 export default function Home() {
   return (
     <main className="bg-black text-white overflow-x-hidden scroll-smooth">
-
+      <MusicPlayer />
       {/* ================= PAGE 1 ================= */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
 
