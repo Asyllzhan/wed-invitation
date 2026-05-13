@@ -26,7 +26,7 @@ export default function Home() {
 <div className="relative z-10 text-center px-6 mt-40 md:mt-0"> 
   {/* mt-40 опустит текст вниз на мобильных, md:mt-0 вернет как было на компьютерах */}
 
-  <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-10">
+  <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-30">
     ТОЙҒА ШАҚЫРТУ
   </p>
 
