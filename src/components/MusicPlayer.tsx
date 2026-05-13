@@ -20,7 +20,7 @@ export default function MusicPlayer() {
 
   return (
     <div className="fixed top-6 right-6 z-[100]">
-<audio ref={audioRef} loop src="/mus.mp3" />
+<audio ref={audioRef} loop src="/mus2.mp3" />
       
       <button
         onClick={togglePlay}

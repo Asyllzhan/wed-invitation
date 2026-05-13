@@ -1,3 +1,5 @@
+"use client";
+
 import Countdown from "@/components/Countdown";
 import RSVP from "@/components/RSVP";
 import MusicPlayer from "@/components/MusicPlayer";
@@ -14,7 +16,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage: "url('/aq1.jpeg')",
+            backgroundImage: "url('/aq2.jpeg')",
           }}
         />
 
@@ -28,13 +30,16 @@ export default function Home() {
             ТОЙҒА ШАҚЫРТУ
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-extralight tracking-wide">
-            Aqsezim
-          </h1>
+          <h1 
+  className="text-7xl md:text-9xl text-white drop-shadow-md"
+  style={{ fontFamily: "var(--font-kz-ceremonious)" }}
+>
+  Ақсезім
+</h1>
 
-          <p className="mt-4 text-neutral-300 text-lg">
-            Qyz Uzatu
-          </p>
+          <p className="mt-6 text-neutral-200 text-2xl md:text-2xl tracking-[4px] uppercase font-light">
+  Qyz Uzatu
+</p>
 
           <div className="w-24 h-[1px] bg-white/40 mx-auto my-8" />
 
@@ -83,9 +88,16 @@ export default function Home() {
       Сіздерді аяулы қызымыз
     </p>
 
-    <h1 className="text-6xl italic my-10 font-light">
-      Aqsezımnıñ
-    </h1>
+    <h1 
+  className="text-[48px] leading-[1.1] md:text-8xl text-[#b68b3c] drop-shadow-md whitespace-nowrap"
+  style={{ 
+    fontFamily: "var(--font-kz-ceremonious)",
+    marginLeft: "-5px", // Небольшая коррекция, чтобы первая буква визуально была по центру
+    marginRight: "-5px"
+  }}
+>
+  Ақсезімнің
+</h1>
 
     <p className="text-[20px] leading-[42px] italic">
       Ұзату тойына арналған
@@ -131,31 +143,58 @@ export default function Home() {
     <p className="text-xl mt-3">
       Сағат 18:00
     </p>
+{/* CALENDAR CONTAINER */}
+<motion.div 
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="relative overflow-hidden border-2 border-[#b68b3c] rounded-[30px] mt-12 p-6 bg-white/10 backdrop-blur-md shadow-xl"
+>
+  {/* BACKGROUND IMAGE FOR CALENDAR */}
+  <div 
+    className="absolute inset-0 z-0 opacity-30 bg-cover bg-center"
+    style={{ backgroundImage: "url('/bg4.png')" }} // Укажи здесь путь к своей фоновой картинке
+  />
 
-    {/* CALENDAR */}
-    <div className="border-2 border-[#b68b3c] rounded-[30px] mt-12 p-5 bg-white/20 backdrop-blur-sm">
-
-      <div className="grid grid-cols-7 gap-2 text-sm mb-4">
-        {["ДС", "СС", "СР", "БС", "ЖМ", "СБ", "ЖС"].map((d) => (
-          <div key={d}>{d}</div>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-7 gap-2 text-sm">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className={
-              i + 1 === 24
-                ? "border border-[#b68b3c] rounded-md"
-                : ""
-            }
-          >
-            {i + 1}
-          </div>
-        ))}
-      </div>
+  {/* CALENDAR CONTENT */}
+  <div className="relative z-10">
+    <div className="grid grid-cols-7 gap-2 text-[11px] mb-6 font-medium tracking-widest text-[#b68b3c]">
+      {["ДС", "СС", "СР", "БС", "ЖМ", "СБ", "ЖС"].map((d) => (
+        <div key={d} className="text-center">{d}</div>
+      ))}
     </div>
+
+    <div className="grid grid-cols-7 gap-y-4 text-sm font-light">
+      {[...Array(30)].map((_, i) => {
+        const day = i + 1;
+        const isTarget = day === 24;
+
+        return (
+          <div key={i} className="relative flex items-center justify-center h-10 w-full">
+            {isTarget && (
+              <motion.div 
+                layoutId="calendarSelect"
+                initial={{ scale: 0 }}
+                animate={{ scale: [1, 1.15, 1] }}
+                transition={{ 
+                  repeat: Infinity, 
+                  duration: 2,
+                  ease: "easeInOut" 
+                }}
+                className="absolute inset-0 m-auto w-9 h-9 border-2 border-[#b68b3c] bg-[#b68b3c]/10 rounded-full"
+              />
+            )}
+            <span className={isTarget ? "text-[#b68b3c] font-bold z-10" : "text-neutral-500 z-10"}>
+              {day}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</motion.div>
+
 
     {/* LOCATION */}
     <div className="mt-14">
