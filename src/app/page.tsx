@@ -22,8 +22,8 @@ export default function Home() {
         {/* CONTENT */}
         <div className="relative z-10 text-center px-6">
 
-          <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-6">
-            Wedding Invitation
+          <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-20">
+            ТОЙҒА ШАҚЫРТУ
           </p>
 
           <h1 className="text-5xl md:text-7xl font-extralight tracking-wide">
@@ -37,11 +37,11 @@ export default function Home() {
           <div className="w-24 h-[1px] bg-white/40 mx-auto my-8" />
 
           <p className="text-neutral-300 tracking-[4px] uppercase text-sm">
-            24 June 2026 • 18:00
+            24 Маусым 2026 • 18:00
           </p>
 
           <p className="mt-16 animate-bounce text-neutral-400 text-sm">
-            ↓ Scroll
+            ↓ Астыға айналдырыңыз ↓
           </p>
         </div>
       </section>
@@ -205,9 +205,9 @@ export default function Home() {
 
     {/* <h2 className="text-4xl italic mb-10 font-light">
       RSVP
-    </h2>
+    </h2>*/}
 
-    <p className="text-xl italic leading-relaxed mb-10">
+    <p className="text-xl italic leading-relaxed mb-2">
       Тойға келетініңізді
       растауыңызды сұраймыз
     </p>

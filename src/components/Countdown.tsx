@@ -6,10 +6,10 @@ export default function Countdown() {
   const weddingDate = new Date("2026-06-24T18:00:00");
 
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    Күн: 0,
+    Сағат: 0,
+    Минут: 0,
+    Секунд: 0,
   });
 
   useEffect(() => {
@@ -18,19 +18,19 @@ export default function Countdown() {
       const distance = weddingDate.getTime() - now;
 
       setTimeLeft({
-        days: Math.max(
+        Күн: Math.max(
           0,
           Math.floor(distance / (1000 * 60 * 60 * 24))
         ),
-        hours: Math.max(
+        Сағат: Math.max(
           0,
           Math.floor((distance / (1000 * 60 * 60)) % 24)
         ),
-        minutes: Math.max(
+        Минут: Math.max(
           0,
           Math.floor((distance / (1000 * 60)) % 60)
         ),
-        seconds: Math.max(
+        Секунд: Math.max(
           0,
           Math.floor((distance / 1000) % 60)
         ),
@@ -44,7 +44,8 @@ export default function Countdown() {
     <div className="text-center text-black">
 
       <h2 className="text-4xl italic mb-10 font-light">
-        Countdown
+        ТОЙ САЛТАНАТЫНА
+        ДЕЙІН:
       </h2>
 
       <div className="grid grid-cols-4 gap-3">
@@ -53,11 +54,11 @@ export default function Countdown() {
         <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
 
           <p className="text-3xl font-light">
-            {timeLeft.days}
+            {timeLeft.Күн}
           </p>
 
           <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Days
+            Күн
           </p>
         </div>
 
@@ -65,11 +66,11 @@ export default function Countdown() {
         <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
 
           <p className="text-3xl font-light">
-            {timeLeft.hours}
+            {timeLeft.Сағат}
           </p>
 
           <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Hours
+            Сағат
           </p>
         </div>
 
@@ -77,11 +78,11 @@ export default function Countdown() {
         <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
 
           <p className="text-3xl font-light">
-            {timeLeft.minutes}
+            {timeLeft.Минут}
           </p>
 
           <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Min
+            Минут
           </p>
         </div>
 
@@ -89,11 +90,11 @@ export default function Countdown() {
         <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
 
           <p className="text-3xl font-light">
-            {timeLeft.seconds}
+            {timeLeft.Секунд}
           </p>
 
           <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Sec
+            Секунд
           </p>
         </div>
 
