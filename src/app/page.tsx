@@ -22,7 +22,7 @@ export default function Home() {
         {/* CONTENT */}
         <div className="relative z-10 text-center px-6">
 
-          <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-20">
+          <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-45">
             ТОЙҒА ШАҚЫРТУ
           </p>
 
