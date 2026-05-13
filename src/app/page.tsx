@@ -16,7 +16,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage: "url('/aq4.jpeg')",
+            backgroundImage: "url('/aq5.jpeg')",
           }}
         />
 {/* LIGHT OVERLAY (меняем черный фон на светлый или убираем вовсе) */}
