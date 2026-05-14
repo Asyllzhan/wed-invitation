@@ -10,263 +10,451 @@ export default function Home() {
     <main className="bg-black text-white overflow-x-hidden scroll-smooth">
       <MusicPlayer />
       {/* ================= PAGE 1 ================= */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* ================= PAGE 1 ================= */}
+<section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
 
-        {/* BACKGROUND IMAGE */}
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{
-            backgroundImage: "url('/aq5.jpeg')",
-          }}
-        />
+  {/* BACKGROUND IMAGE */}
+  <div
+    className="absolute inset-0 bg-cover bg-center scale-105"
+    style={{ backgroundImage: "url('/aq5.jpeg')" }}
+  />
 
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/55" />
-{/* CONTENT */}
-<div className="relative z-10 text-center px-6 mt-40 md:mt-0"> 
-  {/* mt-40 опустит текст вниз на мобильных, md:mt-0 вернет как было на компьютерах */}
+  {/* DARK OVERLAY — чуть темнее снизу для читаемости */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
 
-  <p className="uppercase tracking-[8px] text-sm text-neutral-300 mb-30">
-    ТОЙҒА ШАҚЫРТУ
-  </p>
-
-  <h1 
-    className="text-7xl md:text-9xl text-white drop-shadow-md"
-    style={{ fontFamily: "var(--font-kz-ceremonious)" }}
+  {/* УГЛОВЫЕ ОРНАМЕНТЫ */}
+  {/* Верхний левый */}
+  <svg
+    className="absolute top-5 left-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
   >
-    Ақсезім
-  </h1>
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
 
-  <p className="mt-6 text-neutral-200 text-2xl md:text-2xl tracking-[4px] uppercase font-light">
-    Qyz Uzatu
-  </p>
+  {/* Верхний правый */}
+  <svg
+    className="absolute top-5 right-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scaleX(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
 
-  <div className="w-24 h-[1px] bg-white/40 mx-auto my-8" />
+  {/* Нижний левый */}
+  <svg
+    className="absolute bottom-5 left-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scaleY(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
 
-  <p className="text-neutral-300 tracking-[4px] uppercase text-sm">
-    24 Маусым 2026 • 19:00
-  </p>
+  {/* Нижний правый */}
+  <svg
+    className="absolute bottom-5 right-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scale(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
 
-  <p className="mt-10 animate-bounce text-neutral-400 text-sm">
-    ↓ Астыға айналдырыңыз ↓
-  </p>
-</div>
-      </section>
+  {/* CONTENT */}
+  <div className="relative z-10 text-center px-6 flex flex-col items-center">
+
+    {/* Верхний маленький орнамент-разделитель */}
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a96e" opacity="0.7">
+        <polygon points="5,0 6.5,3.5 10,3.5 7.3,5.7 8.1,9.5 5,7.5 1.9,9.5 2.7,5.7 0,3.5 3.5,3.5"/>
+      </svg>
+      <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
+    </div>
+
+    {/* Подзаголовок сверху */}
+    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-5">
+      ТОЙҒА ШАҚЫРТУ
+    </p>
+
+    {/* Главное имя с золотым свечением */}
+    <h1
+      className="text-[72px] leading-none text-white"
+      style={{
+        fontFamily: "var(--font-kz-ceremonious)",
+        textShadow: "0 0 60px rgba(182,139,60,0.55), 0 0 20px rgba(182,139,60,0.3)",
+      }}
+    >
+      Ақсезім
+    </h1>
+
+    {/* Subtitle */}
+    <p className="mt-4 text-[#e8d5a8] text-base tracking-[5px] uppercase font-light">
+      Qyz Uzatu
+    </p>
+
+    {/* Декоративная линия с ромбом */}
+    <div className="flex items-center gap-3 my-6">
+      <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#c9a96e]/70" />
+      <div
+        className="w-2 h-2 rotate-45 border border-[#c9a96e]"
+        style={{ minWidth: "8px" }}
+      />
+      <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#c9a96e]/70" />
+    </div>
+
+    {/* Дата */}
+    <p className="text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
+      24 Маусым 2026 · 19:00
+    </p>
+
+    {/* Скролл-хинт внизу экрана */}
+    <div className="mt-12 flex flex-col items-center gap-1 animate-bounce">
+      <p className="text-[#a09070] text-[11px] tracking-[3px] uppercase">
+        Айналдырыңыз
+      </p>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a09070" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M12 5v14M5 15l7 7 7-7"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
 
       {/* ================= PAGE 2 ================= */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+ {/* ================= PAGE 2 ================= */}
+<section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: "url('/bg.png')",
-    }}
+    style={{ backgroundImage: "url('/bg.png')" }}
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#e6dfd5]/88" />
+  <div className="absolute inset-0 bg-[#ede6da]/90" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-sm text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
 
-    <h2 className="text-4xl italic mb-10 font-light">
+    {/* Верхний орнамент */}
+    <div className="flex items-center justify-center gap-3 mb-6">
+      <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2 C12 2 8 8 12 12 C16 8 12 2 12 2Z" fill="#b68b3c" opacity="0.7"/>
+        <path d="M12 22 C12 22 8 16 12 12 C16 16 12 22 12 22Z" fill="#b68b3c" opacity="0.5"/>
+        <path d="M2 12 C2 12 8 8 12 12 C8 16 2 12 2 12Z" fill="#b68b3c" opacity="0.4"/>
+        <path d="M22 12 C22 12 16 8 12 12 C16 16 22 12 22 12Z" fill="#b68b3c" opacity="0.4"/>
+      </svg>
+      <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
+    </div>
+
+    {/* Құрметті */}
+    <h2
+      className="text-4xl italic mb-8 font-light text-[#3a2810]"
+      style={{ letterSpacing: "2px" }}
+    >
       Құрметті
     </h2>
 
-    <p className="text-[20px] leading-[42px] italic">
-      Ағайын-туыс, бауырлар,
-      құда-жекжат,
-      нағашы-жиен, бөлелер,
-      дос-жаран, көршілер мен
+    {/* Список гостей */}
+    <p className="text-[17px] leading-[40px] italic text-[#4a3520]">
+      Ағайын-туыс, бауырлар,<br />
+      құда-жекжат,<br />
+      нағашы-жиен, бөлелер,<br />
+      дос-жаран, көршілер мен<br />
       әріптестер!
     </p>
 
-    <div className="h-20" />
+    {/* Разделитель */}
+    <div className="flex items-center gap-3 my-8">
+      <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#b68b3c]/40" />
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#b68b3c]/60" />
+      <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/40" />
+    </div>
 
-    <p className="text-xl italic mb-6"> 
-  {/* mb-6 добавит отступ снизу от этой строки */}
-  Сіздерді аяулы қызымыз
-</p>
+    {/* Шақырту текст */}
+    <p className="text-[17px] italic text-[#4a3520] mb-5">
+      Сіздерді аяулы қызымыз
+    </p>
 
-<h1 
-  className="text-[48px] leading-[1.1] md:text-[100px] text-[#b68b3c] drop-shadow-md whitespace-nowrap mt-4 mb-4"
-  style={{ 
-    fontFamily: "var(--font-kz-ceremonious)",
-    marginLeft: "-5px",
-    marginRight: "-5px"
-  }}
->
-  Ақсезімнің
-</h1>
+    {/* Имя в карточке */}
+    <div
+      className="relative mx-auto my-2 py-5 px-6"
+      style={{
+        border: "1.5px solid #b68b3c",
+        borderRadius: "16px",
+        background: "rgba(255,255,255,0.55)",
+        backdropFilter: "blur(8px)",
+        boxShadow: "0 4px 24px rgba(182,139,60,0.13)",
+      }}
+    >
+      {/* Уголки карточки */}
+      <div className="absolute top-[-1px] left-[-1px] w-4 h-4 border-t-2 border-l-2 border-[#b68b3c] rounded-tl-[14px]" />
+      <div className="absolute top-[-1px] right-[-1px] w-4 h-4 border-t-2 border-r-2 border-[#b68b3c] rounded-tr-[14px]" />
+      <div className="absolute bottom-[-1px] left-[-1px] w-4 h-4 border-b-2 border-l-2 border-[#b68b3c] rounded-bl-[14px]" />
+      <div className="absolute bottom-[-1px] right-[-1px] w-4 h-4 border-b-2 border-r-2 border-[#b68b3c] rounded-br-[14px]" />
 
-    <p className="text-[20px] leading-[42px] italic">
-      Ұзату тойына арналған
-      салтанатты ақ дастарханымыздың
-      қадірлі қонағы болуға
+      <h1
+        className="text-[52px] leading-[1.05] text-[#b68b3c]"
+        style={{
+          fontFamily: "var(--font-kz-ceremonious)",
+          textShadow: "0 2px 16px rgba(182,139,60,0.2)",
+        }}
+      >
+        Ақсезімнің
+      </h1>
+    </div>
+
+    <p className="text-[17px] leading-[40px] italic text-[#4a3520] mt-5">
+      Ұзату тойына арналған<br />
+      салтанатты ақ дастарханымыздың<br />
+      қадірлі қонағы болуға<br />
       шақырамыз!
     </p>
+
+    {/* Нижний орнамент */}
+    <div className="flex items-center justify-center gap-3 mt-8">
+      <div className="w-10 h-[1px] bg-[#b68b3c]/40" />
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#b68b3c]/50" />
+      <div className="w-10 h-[1px] bg-[#b68b3c]/40" />
+    </div>
   </div>
 </section>
+
 {/* ================= PAGE 3 ================= */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: "url('/bg2.png')",
-    }}
+    style={{ backgroundImage: "url('/bg2.png')" }}
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#e6dfd5]/88" />
+  <div className="absolute inset-0 bg-[#ede6da]/90" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-sm text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
 
-    <p className="text-2xl italic leading-loose">
+    {/* Той иелері */}
+    <p className="text-base italic text-[#7a5c30] tracking-wide">
       Құрметпен, той иелері
     </p>
 
-    <h2 className="text-4xl italic my-10 font-light">
+    <h2
+      className="text-3xl italic my-4 font-light text-[#3a2810]"
+      style={{ letterSpacing: "1px" }}
+    >
       Бақытжан – Мадина
     </h2>
 
-    <h2 className="text-4xl italic mb-10 font-light">
+    {/* Разделитель */}
+    <div className="flex items-center gap-3 mb-8">
+      <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#b68b3c]/50" />
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#b68b3c]" />
+      <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/50" />
+    </div>
+
+    <h2 className="text-2xl italic mb-6 font-light text-[#3a2810]">
       Той салтанаты
     </h2>
+{/* ===== ДАТА + КАЛЕНДАРЬ + ВРЕМЯ ===== */}
 
-    <p className="text-2xl italic">
-      24 Маусым 2026
-    </p>
+{/* Текст даты */}
+<p className="text-2xl italic text-[#3a2810] mb-6">
+  24 Маусым 2026
+</p>
 
-    <p className="text-xl mt-3">
-      Сағат 18:00
-    </p>
-{/* CALENDAR CONTAINER */}
-<motion.div 
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.8 }}
-  className="relative overflow-hidden border-2 border-[#b68b3c] rounded-[30px] mt-12 p-6 bg-white/10 backdrop-blur-md shadow-xl"
->
-  {/* BACKGROUND IMAGE FOR CALENDAR */}
-  <div 
-    className="absolute inset-0 z-0 opacity-30 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg4.png')" }} // Укажи здесь путь к своей фоновой картинке
+{/* Календарь с сердцем */}
+<div className="relative w-full mb-6">
+  
+  {/* Картинка календаря */}
+  <img
+    src="/calendar.png"
+    alt="Маусым 2026"
+    className="w-full h-auto"
+    style={{ borderRadius: "16px" }}
   />
 
-  {/* CALENDAR CONTENT */}
-  <div className="relative z-10">
-    <div className="grid grid-cols-7 gap-2 text-[11px] mb-6 font-medium tracking-widest text-[#b68b3c]">
-      {["ДС", "СС", "СР", "БС", "ЖМ", "СБ", "ЖС"].map((d) => (
-        <div key={d} className="text-center">{d}</div>
-      ))}
-    </div>
+  {/* Анимированное сердце на 24-м числе */}
+  {/* 
+    Позиция сердца подобрана под твой календарь:
+    - left: 24 находится в 4-й колонке из 7 (примерно 43% слева)
+    - top:  24 в 5-й строке (примерно 78% сверху)
+    Если сердце чуть смещено — подправь left/top в процентах
+  */}
+  <div
+    className="absolute flex flex-col items-center"
+    style={{ left: "42%", top: "76%", transform: "translate(-50%, -50%)" }}
+  >
+    {/* Пульсирующий круг позади */}
+    <div
+      className="absolute rounded-full"
+      style={{
+        width: "36px",
+        height: "36px",
+        background: "rgba(182,139,60,0.15)",
+        animation: "pulse-ring 2s ease-in-out infinite",
+      }}
+    />
 
-    <div className="grid grid-cols-7 gap-y-4 text-sm font-light">
-      {[...Array(30)].map((_, i) => {
-        const day = i + 1;
-        const isTarget = day === 24;
-
-        return (
-          <div key={i} className="relative flex items-center justify-center h-10 w-full">
-            {isTarget && (
-              <motion.div 
-                layoutId="calendarSelect"
-                initial={{ scale: 0 }}
-                animate={{ scale: [1, 1.15, 1] }}
-                transition={{ 
-                  repeat: Infinity, 
-                  duration: 2,
-                  ease: "easeInOut" 
-                }}
-                className="absolute inset-0 m-auto w-9 h-9 border-2 border-[#b68b3c] bg-[#b68b3c]/10 rounded-full"
-              />
-            )}
-            <span className={isTarget ? "text-[#b68b3c] font-bold z-10" : "text-neutral-500 z-10"}>
-              {day}
-            </span>
-          </div>
-        );
-      })}
-    </div>
+    {/* Само сердце */}
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      style={{ animation: "heartbeat 1.4s ease-in-out infinite", filter: "drop-shadow(0 0 6px rgba(182,139,60,0.8))" }}
+    >
+      <path
+        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+        fill="none"
+        stroke="#b68b3c"
+        strokeWidth="1.2"
+      />
+    </svg>
   </div>
-</motion.div>
+</div>
+
+{/* Время снизу */}
+<p className="text-xl italic text-[#3a2810]">
+  Сағат 19:00-де
+</p>
 
 
-    {/* LOCATION */}
-    <div className="mt-14">
 
-      <h2 className="text-4xl italic mb-6 font-light">
-        Мекенжайы
-      </h2>
+    {/* Мекенжайы */}
+    <h2 className="text-2xl italic mb-5 font-light text-[#3a2810]">
+      Мекенжайы
+    </h2>
 
-      <p className="text-xl italic leading-relaxed">
-        Тараз қаласы,
-        Әл-Фараби көшесі 68
-      </p>
-
-      <h1 className="text-6xl italic my-6 font-light">
-        Qobyz
-      </h1>
-
-      <p className="text-xl italic">
-        мейрамханасы
-      </p>
-
-      {/* MAP BUTTON */}
-      <a
-        href="https://2gis.kz/taraz/geo/70000001111844810/71.338587,42.899736"
-        target="_blank"
-        className="inline-block mt-8 border-2 border-black rounded-full px-10 py-3 text-xl italic hover:bg-black hover:text-white transition duration-300"
+    {/* Адрес — плашка с иконкой */}
+    <div
+      className="flex items-center gap-4 text-left p-4 mb-5"
+      style={{
+        border: "1.5px solid #d4b87a",
+        borderRadius: "14px",
+        background: "rgba(255,255,255,0.5)",
+        backdropFilter: "blur(6px)",
+      }}
+    >
+      {/* Иконка геолокации */}
+      <div
+        className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
+        style={{ background: "#b68b3c" }}
       >
-        Карта
-      </a>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <div>
+        <p className="text-[17px] italic font-medium text-[#3a2810] leading-tight">Qobyz</p>
+        <p className="text-[13px] text-[#7a5c30] italic leading-snug mt-0.5">
+          Тараз қаласы,<br />Әл-Фараби көшесі 68
+        </p>
+      </div>
     </div>
+
+    {/* Кнопка карты */}
+    <a
+      href="https://2gis.kz/taraz/geo/70000001111844810/71.338587,42.899736"
+      target="_blank"
+      className="inline-flex items-center gap-2 mt-2 px-8 py-3 rounded-full text-[15px] italic transition duration-300"
+      style={{
+        border: "1.5px solid #3a2810",
+        color: "#3a2810",
+      }}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      Картада қарау
+    </a>
   </div>
 </section>
+
 {/* ================= PAGE 4 ================= */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage: "url('/bg2.png')",
-    }}
+    style={{ backgroundImage: "url('/bg2.png')" }}
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#e6dfd5]/88" />
+  <div className="absolute inset-0 bg-[#ede6da]/90" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-sm text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
 
-    {/* <h2 className="text-4xl italic mb-10 font-light">
-      RSVP
-    </h2>*/}
+    {/* Верхний орнамент */}
+    <div className="flex items-center justify-center gap-3 mb-6">
+      <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
+      <svg width="14" height="14" viewBox="0 0 10 10" fill="#b68b3c" opacity="0.7">
+        <polygon points="5,0 6.5,3.5 10,3.5 7.3,5.7 8.1,9.5 5,7.5 1.9,9.5 2.7,5.7 0,3.5 3.5,3.5"/>
+      </svg>
+      <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
+    </div>
 
-    <p className="text-xl italic leading-relaxed mb-2">
-      Тойға келетініңізді
+    <p className="text-[17px] italic leading-relaxed text-[#4a3520] mb-6">
+      Тойға келетініңізді<br />
       растауыңызды сұраймыз
     </p>
 
-
-    {/* RSVP */}
-    <div className="bg-white/30 backdrop-blur-md rounded-[30px] p-5 border border-white/40">
+    {/* RSVP карточка */}
+    <div
+      className="p-5"
+      style={{
+        background: "rgba(255,255,255,0.55)",
+        backdropFilter: "blur(10px)",
+        border: "1.5px solid #d4b87a",
+        borderRadius: "24px",
+      }}
+    >
       <RSVP />
     </div>
 
-    {/* COUNTDOWN */}
-    <div className="mt-14">
-      <Countdown />
+    {/* Разделитель перед таймером */}
+    <div className="flex items-center gap-3 my-8">
+      <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#b68b3c]/40" />
+      <div className="w-1.5 h-1.5 rotate-45 bg-[#b68b3c]/60" />
+      <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/40" />
     </div>
+
+    {/* COUNTDOWN */}
+    <Countdown />
+
+    {/* Нижний декор */}
+    <div className="flex items-center justify-center gap-3 mt-10">
+      <div className="w-10 h-[1px] bg-[#b68b3c]/40" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2 C12 2 8 8 12 12 C16 8 12 2 12 2Z" fill="#b68b3c" opacity="0.6"/>
+        <path d="M12 22 C12 22 8 16 12 12 C16 16 12 22 12 22Z" fill="#b68b3c" opacity="0.4"/>
+        <path d="M2 12 C2 12 8 8 12 12 C8 16 2 12 2 12Z" fill="#b68b3c" opacity="0.35"/>
+        <path d="M22 12 C22 12 16 8 12 12 C16 16 22 12 22 12Z" fill="#b68b3c" opacity="0.35"/>
+      </svg>
+      <div className="w-10 h-[1px] bg-[#b68b3c]/40" />
+    </div>
+
   </div>
 </section>
-
     </main>
   );
 }

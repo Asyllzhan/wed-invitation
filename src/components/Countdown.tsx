@@ -6,10 +6,10 @@ export default function Countdown() {
   const weddingDate = new Date("2026-06-24T18:00:00");
 
   const [timeLeft, setTimeLeft] = useState({
-    Күн: 0,
-    Сағат: 0,
-    Минут: 0,
-    Секунд: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
   useEffect(() => {
@@ -18,86 +18,52 @@ export default function Countdown() {
       const distance = weddingDate.getTime() - now;
 
       setTimeLeft({
-        Күн: Math.max(
-          0,
-          Math.floor(distance / (1000 * 60 * 60 * 24))
-        ),
-        Сағат: Math.max(
-          0,
-          Math.floor((distance / (1000 * 60 * 60)) % 24)
-        ),
-        Минут: Math.max(
-          0,
-          Math.floor((distance / (1000 * 60)) % 60)
-        ),
-        Секунд: Math.max(
-          0,
-          Math.floor((distance / 1000) % 60)
-        ),
+        days: Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24))),
+        hours: Math.max(0, Math.floor((distance / (1000 * 60 * 60)) % 24)),
+        minutes: Math.max(0, Math.floor((distance / (1000 * 60)) % 60)),
+        seconds: Math.max(0, Math.floor((distance / 1000) % 60)),
       });
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
+  const pad = (n: number) => n.toString().padStart(2, "0");
+
+  const items = [
+    { value: timeLeft.days, label: "Күн" },
+    { value: timeLeft.hours, label: "Сағат" },
+    { value: timeLeft.minutes, label: "Минут" },
+    { value: timeLeft.seconds, label: "Секунд" },
+  ];
+
   return (
     <div className="text-center text-black">
 
-      <h2 className="text-4xl italic mb-10 font-light">
-        ТОЙ САЛТАНАТЫНА
-        ДЕЙІН:
+      <h2 className="text-2xl italic mb-6 font-light text-[#3a2810]">
+        Той салтанатына дейін:
       </h2>
 
-      <div className="grid grid-cols-4 gap-3">
-
-        {/* DAYS */}
-        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
-
-          <p className="text-3xl font-light">
-            {timeLeft.Күн}
-          </p>
-
-          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Күн
-          </p>
-        </div>
-
-        {/* HOURS */}
-        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
-
-          <p className="text-3xl font-light">
-            {timeLeft.Сағат}
-          </p>
-
-          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Сағат
-          </p>
-        </div>
-
-        {/* MINUTES */}
-        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
-
-          <p className="text-3xl font-light">
-            {timeLeft.Минут}
-          </p>
-
-          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Минут
-          </p>
-        </div>
-
-        {/* SECONDS */}
-        <div className="bg-white/40 backdrop-blur-md rounded-[24px] py-5 px-2 border border-[#b68b3c]/30">
-
-          <p className="text-3xl font-light">
-            {timeLeft.Секунд}
-          </p>
-
-          <p className="text-xs uppercase tracking-[3px] mt-2 text-neutral-600">
-            Секунд
-          </p>
-        </div>
-
+      <div className="grid grid-cols-4 gap-2">
+        {items.map(({ value, label }) => (
+          <div
+            key={label}
+            className="py-4 px-1 text-center"
+            style={{
+              background: "rgba(255,255,255,0.55)",
+              backdropFilter: "blur(8px)",
+              border: "1.5px solid #d4b87a",
+              borderRadius: "14px",
+            }}
+          >
+            <p className="text-[28px] font-light text-[#b68b3c] leading-none">
+              {pad(value)}
+            </p>
+            <p className="text-[9px] uppercase tracking-[2px] mt-2 text-[#9a7a50]">
+              {label}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
