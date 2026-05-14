@@ -150,7 +150,7 @@ export default function Home() {
   <div className="absolute inset-0 bg-[#ede6da]/90" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
     {/* Верхний орнамент */}
     <div className="flex items-center justify-center gap-3 mb-6">
@@ -221,7 +221,7 @@ export default function Home() {
       </h1>
     </div>
 
-    <p className="text-[18px] leading-[40px] italic text-[#4a3520] mt-5">
+    <p className="text-[20px] leading-[40px] italic text-[#4a3520] mt-5">
       Ұзату тойына арналған<br />
       салтанатты ақ дастарханымыздың<br />
       қадірлі қонағы болуға<br />
@@ -250,7 +250,7 @@ export default function Home() {
   <div className="absolute inset-0 bg-[#ede6da]/90" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
     {/* Той иелері */}
     <p className="text-base italic text-[#7a5c30] tracking-wide">
@@ -258,8 +258,8 @@ export default function Home() {
     </p>
 
     <h2
-      className="text-3xl italic my-4 font-light text-[#3a2810]"
-      style={{ letterSpacing: "1px" }}
+      className="text-5xl italic my-4 font-light text-[#3a2810]"
+      style={{ fontFamily: "var(--font-kz-ceremonious)", letterSpacing: "1px" }} 
     >
       Бақытжан-Мадина
     </h2>
@@ -305,16 +305,16 @@ export default function Home() {
     left: "41.4%",
     top: "77%",
     transform: "translate(-50%, -50%)",
-    width: "12vw",
-    height: "12vw",
+    width: "8vw",
+    height: "8vw",
   }}
 >
   {/* Пульсирующий круг */}
   <div
     className="absolute rounded-full"
     style={{
-      width: "12vw",
-      height: "12vw",
+      width: "8vw",
+      height: "8vw",
       background: "rgba(182,139,60,0.15)",
       animation: "pulse-ring 2s ease-in-out infinite",
     }}
@@ -323,8 +323,8 @@ export default function Home() {
   {/* Сердце */}
   <svg
     style={{
-      width: "9vw",
-      height: "9vw",
+      width: "6vw",
+      height: "6vw",
       animation: "heartbeat 1.4s ease-in-out infinite",
       filter: "drop-shadow(0 0 6px rgba(182,139,60,0.8))",
     }}
@@ -386,13 +386,13 @@ export default function Home() {
     <a
       href="https://2gis.kz/taraz/geo/70000001111844810/71.338587,42.899736"
       target="_blank"
-      className="inline-flex items-center gap-2 mt-2 px-8 py-3 rounded-full text-[15px] italic transition duration-300"
+      className="inline-flex items-center gap-2 mt-2 px-8 py-3 rounded-full text-[18px] italic transition duration-300"
       style={{
         border: "1.5px solid #3a2810",
         color: "#3a2810",
       }}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
         <circle cx="12" cy="9" r="2.5"/>
       </svg>
