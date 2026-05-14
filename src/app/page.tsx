@@ -211,7 +211,7 @@ export default function Home() {
       <div className="absolute bottom-[-1px] right-[-1px] w-4 h-4 border-b-2 border-r-2 border-[#b68b3c] rounded-br-[14px]" />
 
       <h1
-        className="text-[52px] leading-[1.05] text-[#b68b3c]"
+        className="text-[52px] leading-[0.5] text-[#b68b3c]"
         style={{
           fontFamily: "var(--font-kz-ceremonious)",
           textShadow: "0 2px 16px rgba(182,139,60,0.2)",
@@ -300,35 +300,44 @@ export default function Home() {
     Если сердце чуть смещено — подправь left/top в процентах
   */}
   <div
-    className="absolute flex flex-col items-center"
-    style={{ left: "41.4%", top: "77%", transform: "translate(-50%, -50%)" }}
-  >
-    {/* Пульсирующий круг позади */}
-    <div
-      className="absolute rounded-full"
-      style={{
-        width: "36px",
-        height: "36px",
-        background: "rgba(182,139,60,0.15)",
-        animation: "pulse-ring 2s ease-in-out infinite",
-      }}
-    />
+  className="absolute flex flex-col items-center justify-center"
+  style={{
+    left: "41.4%",
+    top: "77%",
+    transform: "translate(-50%, -50%)",
+    width: "12vw",
+    height: "12vw",
+  }}
+>
+  {/* Пульсирующий круг */}
+  <div
+    className="absolute rounded-full"
+    style={{
+      width: "12vw",
+      height: "12vw",
+      background: "rgba(182,139,60,0.15)",
+      animation: "pulse-ring 2s ease-in-out infinite",
+    }}
+  />
 
-    {/* Само сердце */}
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      style={{ animation: "heartbeat 1.4s ease-in-out infinite", filter: "drop-shadow(0 0 6px rgba(182,139,60,0.8))" }}
-    >
-      <path
-        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-        fill="none"
-        stroke="#b68b3c"
-        strokeWidth="1.2"
-      />
-    </svg>
-  </div>
+  {/* Сердце */}
+  <svg
+    style={{
+      width: "9vw",
+      height: "9vw",
+      animation: "heartbeat 1.4s ease-in-out infinite",
+      filter: "drop-shadow(0 0 6px rgba(182,139,60,0.8))",
+    }}
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+      fill="none"
+      stroke="#b68b3c"
+      strokeWidth="1.2"
+    />
+  </svg>
+</div>
 </div>
 
 {/* Время снизу */}
