@@ -77,19 +77,20 @@ export default function Home() {
   {/* CONTENT */}
   <div className="relative z-10 text-center px-6 flex flex-col items-center">
 
-    {/* Верхний маленький орнамент-разделитель */}
+    {/* Верхний маленький орнамент-разделитель 
     <div className="flex items-center gap-3 mb-5">
       <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
       <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a96e" opacity="0.7">
         <polygon points="5,0 6.5,3.5 10,3.5 7.3,5.7 8.1,9.5 5,7.5 1.9,9.5 2.7,5.7 0,3.5 3.5,3.5"/>
       </svg>
       <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
-    </div>
+    </div>*/}
 
     {/* Подзаголовок сверху */}
-    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-5">
-      ТОЙҒА ШАҚЫРТУ
+    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-15">
+       
     </p>
+    
 
     {/* Главное имя с золотым свечением */}
     <h1
@@ -104,7 +105,7 @@ export default function Home() {
 
     {/* Subtitle */}
     <p className="mt-4 text-[#e8d5a8] text-base tracking-[5px] uppercase font-light">
-      Qyz Uzatu
+      Қыз ұзату
     </p>
 
     {/* Декоративная линия с ромбом */}
@@ -172,7 +173,7 @@ export default function Home() {
     </h2>
 
     {/* Список гостей */}
-    <p className="text-[17px] leading-[40px] italic text-[#4a3520]">
+    <p className="text-[20px] leading-[40px] italic text-[#4a3520]">
       Ағайын-туыс, бауырлар,<br />
       құда-жекжат,<br />
       нағашы-жиен, бөлелер,<br />
@@ -188,7 +189,7 @@ export default function Home() {
     </div>
 
     {/* Шақырту текст */}
-    <p className="text-[17px] italic text-[#4a3520] mb-5">
+    <p className="text-[20px] italic text-[#4a3520] mb-5">
       Сіздерді аяулы қызымыз
     </p>
 
@@ -220,7 +221,7 @@ export default function Home() {
       </h1>
     </div>
 
-    <p className="text-[17px] leading-[40px] italic text-[#4a3520] mt-5">
+    <p className="text-[18px] leading-[40px] italic text-[#4a3520] mt-5">
       Ұзату тойына арналған<br />
       салтанатты ақ дастарханымыздың<br />
       қадірлі қонағы болуға<br />
@@ -260,7 +261,7 @@ export default function Home() {
       className="text-3xl italic my-4 font-light text-[#3a2810]"
       style={{ letterSpacing: "1px" }}
     >
-      Бақытжан – Мадина
+      Бақытжан-Мадина
     </h2>
 
     {/* Разделитель */}
@@ -300,7 +301,7 @@ export default function Home() {
   */}
   <div
     className="absolute flex flex-col items-center"
-    style={{ left: "42%", top: "76%", transform: "translate(-50%, -50%)" }}
+    style={{ left: "41.4%", top: "77%", transform: "translate(-50%, -50%)" }}
   >
     {/* Пульсирующий круг позади */}
     <div
@@ -334,7 +335,9 @@ export default function Home() {
 <p className="text-xl italic text-[#3a2810]">
   Сағат 19:00-де
 </p>
-
+<p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
+       
+    </p>
 
 
     {/* Мекенжайы */}
@@ -363,7 +366,7 @@ export default function Home() {
         </svg>
       </div>
       <div>
-        <p className="text-[17px] italic font-medium text-[#3a2810] leading-tight">Qobyz</p>
+        <p className="text-[17px] italic font-medium text-[#3a2810] leading-tight">Qobyz    мейрамханасы</p>
         <p className="text-[13px] text-[#7a5c30] italic leading-snug mt-0.5">
           Тараз қаласы,<br />Әл-Фараби көшесі 68
         </p>
@@ -413,7 +416,7 @@ export default function Home() {
       <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
     </div>
 
-    <p className="text-[17px] italic leading-relaxed text-[#4a3520] mb-6">
+    <p className="text-[20px] italic leading-relaxed text-[#4a3520] mb-6">
       Тойға келетініңізді<br />
       растауыңызды сұраймыз
     </p>

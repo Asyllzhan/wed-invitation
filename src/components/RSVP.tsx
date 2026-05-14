@@ -71,14 +71,14 @@ export default function RSVP() {
 
       {/* ИМЯ */}
       <div>
-        <p className="text-[12px] uppercase tracking-[3px] text-[#9a7a50] mb-3 text-left">
+        <p className="text-[15px] uppercase tracking-[3px] text-[#9a7a50] mb-3 text-left">
           Аты-жөніңіз
         </p>
 
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Есімдеріңіз"
+          placeholder="Есім(дер)іңіз"
           className="w-full px-5 py-3.5 outline-none italic text-[15px] text-[#3a2810] placeholder:text-[#b8a080]"
           style={{
             background: "rgba(255,255,255,0.7)",
@@ -87,7 +87,7 @@ export default function RSVP() {
           }}
         />
 
-        <p className="text-[11px] italic text-[#9a7a50] mt-2.5 leading-relaxed text-left">
+        <p className="text-[13px] italic text-[#9a7a50] mt-2 leading-relaxed text-left">
           Жұбайыңызбен келетін болсаңыз,
           екеуіңіз де есімдеріңізді жазыңыз
         </p>
