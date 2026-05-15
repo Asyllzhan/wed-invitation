@@ -35,7 +35,7 @@ export default function RSVP() {
   const options = [
     { value: "coming", label: "Келемін" },
     { value: "with_spouse", label: "Жұбайыммен барамын" },
-    { value: "not_coming", label: "Келе алмаймын" },
+    { value: "not_coming", label: "Өкінішке орай, келе алмаймын" },
   ];
 
   if (sent) {

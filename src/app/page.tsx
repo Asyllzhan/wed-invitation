@@ -10,7 +10,6 @@ export default function Home() {
     <main className="bg-black text-white overflow-x-hidden scroll-smooth">
       <MusicPlayer />
       {/* ================= PAGE 1 ================= */}
-      {/* ================= PAGE 1 ================= */}
 <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
 
   {/* BACKGROUND IMAGE */}
@@ -20,7 +19,7 @@ export default function Home() {
   />
 
   {/* DARK OVERLAY — чуть темнее снизу для читаемости */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
 
   {/* УГЛОВЫЕ ОРНАМЕНТЫ */}
   {/* Верхний левый */}
@@ -90,11 +89,15 @@ export default function Home() {
     <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-15">
        
     </p>
+    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-15">
+       
+    </p>
+
     
 
     {/* Главное имя с золотым свечением */}
     <h1
-      className="text-[72px] leading-none text-white"
+      className="text-[80px] leading-none text-white"
       style={{
         fontFamily: "var(--font-kz-ceremonious)",
         textShadow: "0 0 60px rgba(182,139,60,0.55), 0 0 20px rgba(182,139,60,0.3)",
@@ -136,7 +139,6 @@ export default function Home() {
   </div>
 </section>
 
-      {/* ================= PAGE 2 ================= */}
  {/* ================= PAGE 2 ================= */}
 <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
@@ -147,7 +149,7 @@ export default function Home() {
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/90" />
+  <div className="absolute inset-0 bg-[#ede6da]/70" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
@@ -166,14 +168,14 @@ export default function Home() {
 
     {/* Құрметті */}
     <h2
-      className="text-4xl italic mb-8 font-light text-[#3a2810]"
+      className="text-5xl italic mb-6 font-light text-[#3a2810]"
       style={{ letterSpacing: "2px" }}
     >
       Құрметті
     </h2>
 
     {/* Список гостей */}
-    <p className="text-[20px] leading-[40px] italic text-[#4a3520]">
+    <p className="text-[23px] leading-[40px] italic text-[#4a3520]">
       Ағайын-туыс, бауырлар,<br />
       құда-жекжат,<br />
       нағашы-жиен, бөлелер,<br />
@@ -189,11 +191,10 @@ export default function Home() {
     </div>
 
     {/* Шақырту текст */}
-    <p className="text-[20px] italic text-[#4a3520] mb-5">
+    <p className="text-[23px] italic text-[#4a3520] mb-5">
       Сіздерді аяулы қызымыз
     </p>
-
-    {/* Имя в карточке */}
+   {/* Имя в карточке */}
     <div
       className="relative mx-auto my-2 py-5 px-6"
       style={{
@@ -221,7 +222,8 @@ export default function Home() {
       </h1>
     </div>
 
-    <p className="text-[20px] leading-[40px] italic text-[#4a3520] mt-5">
+
+    <p className="text-[23px] leading-[40px] italic text-[#4a3520] mt-5">
       Ұзату тойына арналған<br />
       салтанатты ақ дастарханымыздың<br />
       қадірлі қонағы болуға<br />
@@ -243,23 +245,23 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg2.png')" }}
+    style={{ backgroundImage: "url('/bg11.png')" }} 
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/90" />
+  <div className="absolute inset-0 bg-[#ede6da]/70" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
     {/* Той иелері */}
-    <p className="text-base italic text-[#7a5c30] tracking-wide">
+    <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
       Құрметпен, той иелері
     </p>
 
     <h2
-      className="text-5xl italic my-4 font-light text-[#3a2810]"
-      style={{ fontFamily: "var(--font-kz-ceremonious)", letterSpacing: "1px" }} 
+      className="text-3xl italic mb-6 font-light text-[#3a2810]"
+      style={{ letterSpacing: "2px" }}
     >
       Бақытжан-Мадина
     </h2>
@@ -271,8 +273,8 @@ export default function Home() {
       <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/50" />
     </div>
 
-    <h2 className="text-2xl italic mb-6 font-light text-[#3a2810]">
-      Той салтанаты
+    <h2 className="text-2xl italic mb-4 font-light text-[#3a2810]">
+      Той салтанаты:
     </h2>
 {/* ===== ДАТА + КАЛЕНДАРЬ + ВРЕМЯ ===== */}
 
@@ -341,7 +343,7 @@ export default function Home() {
 </div>
 
 {/* Время снизу */}
-<p className="text-xl italic text-[#3a2810]">
+<p className="text-2xl italic text-[#3a2810]">
   Сағат 19:00-де
 </p>
 <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
@@ -396,7 +398,7 @@ export default function Home() {
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
         <circle cx="12" cy="9" r="2.5"/>
       </svg>
-      Картада қарау
+      Картадан қарау
     </a>
   </div>
 </section>
@@ -411,10 +413,10 @@ export default function Home() {
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/90" />
+  <div className="absolute inset-0 bg-[#ede6da]/60" />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-[340px] text-center px-6 py-16 text-black">
+  <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
 
     {/* Верхний орнамент */}
     <div className="flex items-center justify-center gap-3 mb-6">

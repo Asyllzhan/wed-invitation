@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -19,42 +18,90 @@ export default function MusicPlayer() {
   };
 
   return (
-    <div className="fixed top-6 right-6 z-[100]">
-<audio ref={audioRef} loop src="/mus2.mp3" />
-      
-      <button
-        onClick={togglePlay}
-        className="relative w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/40 shadow-lg"
-      >
-        {/* Анимированные волны звука */}
-        <AnimatePresence>
+    <>
+      <style>{`
+        @keyframes note-bounce {
+          0%, 100% { transform: translateY(0) scale(1); }
+          50%       { transform: translateY(-4px) scale(1.1); }
+        }
+        @keyframes pulse-out {
+          0%   { transform: scale(0.9); opacity: 0.7; }
+          100% { transform: scale(1.9); opacity: 0; }
+        }
+        @keyframes pulse-out-2 {
+          0%   { transform: scale(0.9); opacity: 0.5; }
+          100% { transform: scale(2.4); opacity: 0; }
+        }
+        .note-playing {
+          animation: note-bounce 1.8s ease-in-out infinite;
+        }
+        .pulse-ring-1 {
+          animation: pulse-out 1.8s ease-out infinite;
+        }
+        .pulse-ring-2 {
+          animation: pulse-out-2 1.8s ease-out infinite;
+          animation-delay: 0.6s;
+        }
+      `}</style>
+
+      <div className="fixed top-6 right-6 z-[100]">
+        <audio ref={audioRef} loop src="/mus3.mp3" />
+
+        <button
+          onClick={togglePlay}
+          className="relative w-14 h-14 flex items-center justify-center rounded-full"
+          style={{
+            background: "rgba(241, 216, 170, 0.15)",
+            border: "1.5px solid #ffffff",
+            backdropFilter: "blur(10px)",
+            boxShadow: isPlaying
+              ? "0 0 20px rgba(121, 118, 112, 0.3)"
+              : "0 2px 12px rgba(0,0,0,0.3)",
+          }}
+        >
+          {/* Кольцо 1 */}
           {isPlaying && (
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1.5, opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="absolute inset-0 bg-white/30 rounded-full"
+            <div
+              className="pulse-ring-1 absolute inset-0 rounded-full"
+              style={{ border: "1.5px solid #ffffff" }} /*b68b3c*/
             />
           )}
-        </AnimatePresence>
 
-        <motion.div
-          animate={{ rotate: isPlaying ? 360 : 0 }}
-          transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-          className="relative z-10"
-        >
+          {/* Кольцо 2 */}
+          {isPlaying && (
+            <div
+              className="pulse-ring-2 absolute inset-0 rounded-full"
+              style={{ border: "1px solid #ffffff" }}
+            />
+          )}
+
+          {/* Нота или пауза */}
           {isPlaying ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-white">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-            </svg>
+            <span
+              className="note-playing relative z-10 select-none"
+              style={{
+                fontSize: "26px",
+                color: "#ffffff",
+                lineHeight: 1,
+                fontFamily: "serif",
+                textShadow: "0 0 12px rgba(182,139,60,0.6)",
+              }}
+            >
+              ♪
+            </span>
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-white">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#ffffff"
+              className="relative z-10"
+            >
               <path d="M8 5v14l11-7z" />
             </svg>
           )}
-        </motion.div>
-      </button>
-    </div>
+        </button>
+      </div>
+    </>
   );
 }
