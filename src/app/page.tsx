@@ -1058,7 +1058,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg20.png')",
-    backgroundPosition: "0% 0%",  // или "0% 50%"
+    backgroundPosition: "50% 0%",  // или "0% 50%"
   }}
 />
 
@@ -1156,7 +1156,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg21.png')",
-    backgroundPosition: "0% 0%",  // или "0% 50%"
+    backgroundPosition: "45% 0%",  // или "0% 50%"
   }}
 />
 
@@ -1323,7 +1323,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg22.png')",
-    backgroundPosition: "0% 0%",  // или "0% 50%"
+    backgroundPosition: "55% 0%",  // или "0% 50%"
   }}
 />
 
