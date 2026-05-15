@@ -1058,7 +1058,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg20.png')",
-    backgroundPosition: "left center",  // или "0% 50%"
+    backgroundPosition: "0% 50%",  // или "0% 50%"
   }}
 />
 
@@ -1156,7 +1156,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg21.png')",
-    backgroundPosition: "left center",  // или "0% 50%"
+    backgroundPosition: "0% 50%",  // или "0% 50%"
   }}
 />
 
@@ -1167,7 +1167,7 @@ export default function Home() {
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
     {/* Той иелері */}
-    <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
+    <p className="text-xl italic text-[#3a2810] tracking-wide mb-4">
       Құрметпен, той иелері
     </p>
 
@@ -1323,7 +1323,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg22.png')",
-    backgroundPosition: "left center",  // или "0% 50%"
+    backgroundPosition: "0% 50%",  // или "0% 50%"
   }}
 />
 
