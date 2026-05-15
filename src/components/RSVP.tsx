@@ -71,7 +71,7 @@ export default function RSVP() {
 
       {/* ИМЯ */}
       <div>
-        <p className="text-[15px] uppercase tracking-[3px] text-[#9a7a50] mb-3 text-left">
+        <p className="text-[15px] uppercase tracking-[3px] text-[#FFFFFF] mb-3 text-left">
           Аты-жөніңіз
         </p>
 
@@ -79,15 +79,15 @@ export default function RSVP() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Есім(дер)іңіз"
-          className="w-full px-5 py-3.5 outline-none italic text-[15px] text-[#3a2810] placeholder:text-[#b8a080]"
+          className="w-full px-5 py-3.5 outline-none italic text-[15px] text-[#50070E] placeholder:text-[#3F3F3F]"
           style={{
             background: "rgba(255,255,255,0.7)",
-            border: "1.5px solid #d4b87a",
+            border: "1.5px solid #50070E",
             borderRadius: "999px",
           }}
         />
 
-        <p className="text-[13px] italic text-[#9a7a50] mt-2 leading-relaxed text-left">
+        <p className="text-[13px] italic text-[#FFFFFF] mt-2 leading-relaxed text-left">
           Жұбайыңызбен келетін болсаңыз,
           екеуіңіз де есімдеріңізді жазыңыз
         </p>
@@ -95,7 +95,7 @@ export default function RSVP() {
 
       {/* ҚАТЫСУ */}
       <div>
-        <p className="text-[12px] uppercase tracking-[3px] text-[#9a7a50] mb-3 text-left">
+        <p className="text-[12px] uppercase tracking-[3px] text-[#FFFFFF] mb-3 text-left">
           Қатысуыңыз
         </p>
 
@@ -109,7 +109,7 @@ export default function RSVP() {
                   ? "rgba(182,139,60,0.08)"
                   : "rgba(255,255,255,0.5)",
                 border: attendance === opt.value
-                  ? "1.5px solid #b68b3c"
+                  ? "1.5px solid #7F0B16"
                   : "1.5px solid #e0d0b0",
                 borderRadius: "12px",
               }}
@@ -118,8 +118,8 @@ export default function RSVP() {
               <div
                 className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
                 style={{
-                  border: "1.5px solid #b68b3c",
-                  background: attendance === opt.value ? "#b68b3c" : "transparent",
+                  border: "1.5px solid #7F0B16",
+                  background: attendance === opt.value ? "#7F0B16" : "transparent",
                 }}
               >
                 {attendance === opt.value && (
@@ -136,7 +136,7 @@ export default function RSVP() {
                 className="hidden"
               />
 
-              <span className="italic text-[15px] text-[#3a2810]">
+              <span className="italic text-[15px] text-[#000000]">
                 {opt.label}
               </span>
             </label>
@@ -151,10 +151,10 @@ export default function RSVP() {
         className="w-full py-4 rounded-full text-white text-[16px] italic transition-all active:scale-[0.98]"
         style={{
           background: loading || !name
-            ? "#c9a96e"
-            : "linear-gradient(135deg, #c9a96e 0%, #b68b3c 100%)",
+            ? "#d26262"
+            : "linear-gradient(135deg, #7F0B16 0%, #50070E 100%)",
           opacity: !name ? 0.7 : 1,
-          boxShadow: name ? "0 4px 20px rgba(182,139,60,0.3)" : "none",
+          boxShadow: name ? "0 4px 20px rgba(182, 60, 60, 0.3)" : "none",
         }}
       >
         {loading ? "Жіберілуде..." : "Жіберу"}
