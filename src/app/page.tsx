@@ -1055,12 +1055,12 @@ export default function Home() {
 
   {/* BACKGROUND */}
   <div
-    className="absolute inset-0 bg-cover bg-center"
+    className="absolute inset-0 bg-cover bg-left"
     style={{ backgroundImage: "url('/bg20.png')" }}
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/80" />
+  <div className="absolute inset-0 bg-[#ede6da]/40" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
@@ -1150,12 +1150,12 @@ export default function Home() {
 
   {/* BACKGROUND */}
   <div
-    className="absolute inset-0 bg-cover bg-center"
+    className="absolute inset-0 bg-cover bg-left"
     style={{ backgroundImage: "url('/bg21.png')" }} 
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/80" />
+  <div className="absolute inset-0 bg-[#ede6da]/40" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
@@ -1314,12 +1314,12 @@ export default function Home() {
 
   {/* BACKGROUND */}
   <div
-    className="absolute inset-0 bg-cover bg-center"
+    className="absolute inset-0 bg-cover bg-left"
     style={{ backgroundImage: "url('/bg22.png')" }}
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/70" />
+  <div className="absolute inset-0 bg-[#ede6da]/50" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
