@@ -40,7 +40,7 @@ export default function Countdown() {
   return (
     <div className="text-center text-black">
 
-      <h2 className="text-2xl italic mb-6 font-light text-[#FFFFFF]">
+      <h2 className="text-2xl italic mb-6 font-light text-[#3a2810]">
         Той салтанатына дейін:
       </h2>
 
@@ -50,16 +50,16 @@ export default function Countdown() {
             key={label}
             className="py-4 px-1 text-center"
             style={{
-              background: "rgba(247, 180, 180, 0.55)",
+              background: "rgba(255,255,255,0.55)",
               backdropFilter: "blur(8px)",
               border: "1.5px solid #d4b87a",
               borderRadius: "14px",
             }}
           >
-            <p className="text-[28px] font-light text-[#FFFFFF] leading-none">
+            <p className="text-[28px] font-light text-[#b68b3c] leading-none">
               {pad(value)}
             </p>
-            <p className="text-[9px] uppercase tracking-[2px] mt-2 text-[#FFFFFF]">
+            <p className="text-[9px] uppercase tracking-[2px] mt-2 text-[#9a7a50]">
               {label}
             </p>
           </div>
