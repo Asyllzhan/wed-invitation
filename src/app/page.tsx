@@ -139,6 +139,134 @@ export default function Home() {
   </div>
 </section>
 
+<section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
+
+  {/* BACKGROUND IMAGE */}
+  <div
+    className="absolute inset-0 bg-cover bg-center scale-105"
+    style={{ backgroundImage: "url('/aq4.jpeg')" }}
+  />
+
+  {/* DARK OVERLAY — чуть темнее снизу для читаемости */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
+
+  {/* УГЛОВЫЕ ОРНАМЕНТЫ */}
+  {/* Верхний левый */}
+  <svg
+    className="absolute top-5 left-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
+
+  {/* Верхний правый */}
+  <svg
+    className="absolute top-5 right-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scaleX(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
+
+  {/* Нижний левый */}
+  <svg
+    className="absolute bottom-5 left-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scaleY(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
+
+  {/* Нижний правый */}
+  <svg
+    className="absolute bottom-5 right-5 w-14 h-14 opacity-50"
+    viewBox="0 0 56 56" fill="none"
+    style={{ transform: "scale(-1)" }}
+  >
+    <path d="M4 4 L4 28 M4 4 L28 4" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M4 14 L14 4" stroke="#c9a96e" strokeWidth="0.8" strokeLinecap="round"/>
+    <circle cx="4" cy="4" r="2.5" fill="#c9a96e"/>
+    <circle cx="28" cy="4" r="1" fill="#c9a96e" opacity="0.5"/>
+    <circle cx="4" cy="28" r="1" fill="#c9a96e" opacity="0.5"/>
+  </svg>
+
+  {/* CONTENT */}
+  <div className="relative z-10 text-center px-6 flex flex-col items-center">
+
+    {/* Верхний маленький орнамент-разделитель 
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="#c9a96e" opacity="0.7">
+        <polygon points="5,0 6.5,3.5 10,3.5 7.3,5.7 8.1,9.5 5,7.5 1.9,9.5 2.7,5.7 0,3.5 3.5,3.5"/>
+      </svg>
+      <div className="w-8 h-[1px] bg-[#c9a96e]/60" />
+    </div>*/}
+
+    {/* Подзаголовок сверху */}
+    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-15">
+       
+    </p>
+    <p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-15">
+       
+    </p>
+
+    
+
+    {/* Главное имя с золотым свечением */}
+    <h1
+      className="text-[80px] leading-none text-white"
+      style={{
+        fontFamily: "var(--font-kz-ceremonious)",
+        textShadow: "0 0 60px rgba(182,139,60,0.55), 0 0 20px rgba(182,139,60,0.3)",
+      }}
+    >
+      Ақсезім
+    </h1>
+
+    {/* Subtitle */}
+    <p className="mt-4 text-[#e8d5a8] text-base tracking-[5px] uppercase font-light">
+      Қыз ұзату
+    </p>
+
+    {/* Декоративная линия с ромбом */}
+    <div className="flex items-center gap-3 my-6">
+      <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#c9a96e]/70" />
+      <div
+        className="w-2 h-2 rotate-45 border border-[#c9a96e]"
+        style={{ minWidth: "8px" }}
+      />
+      <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#c9a96e]/70" />
+    </div>
+
+    {/* Дата */}
+    <p className="text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
+      24 Маусым 2026 · 19:00
+    </p>
+
+    {/* Скролл-хинт внизу экрана */}
+    <div className="mt-12 flex flex-col items-center gap-1 animate-bounce">
+      <p className="text-[#a09070] text-[11px] tracking-[3px] uppercase">
+        Айналдырыңыз
+      </p>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a09070" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M12 5v14M5 15l7 7 7-7"/>
+      </svg>
+    </div>
+
+  </div>
+</section>
  {/* ================= PAGE 2 ================= */}
 <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
@@ -191,35 +319,30 @@ export default function Home() {
     </div>
 
     {/* Шақырту текст */}
-    <p className="text-[23px] italic text-[#4a3520] mb-5">
+    <p className="text-[23px] italic text-[#4a3520] mb-1">
       Сіздерді аяулы қызымыз
     </p>
    {/* Имя в карточке */}
-    <div
-      className="relative mx-auto my-2 py-5 px-6"
-      style={{
-        border: "1.5px solid #b68b3c",
-        borderRadius: "16px",
-        background: "rgba(255,255,255,0.55)",
-        backdropFilter: "blur(8px)",
-        boxShadow: "0 4px 24px rgba(182,139,60,0.13)",
-      }}
-    >
-      {/* Уголки карточки */}
-      <div className="absolute top-[-1px] left-[-1px] w-4 h-4 border-t-2 border-l-2 border-[#b68b3c] rounded-tl-[14px]" />
-      <div className="absolute top-[-1px] right-[-1px] w-4 h-4 border-t-2 border-r-2 border-[#b68b3c] rounded-tr-[14px]" />
-      <div className="absolute bottom-[-1px] left-[-1px] w-4 h-4 border-b-2 border-l-2 border-[#b68b3c] rounded-bl-[14px]" />
-      <div className="absolute bottom-[-1px] right-[-1px] w-4 h-4 border-b-2 border-r-2 border-[#b68b3c] rounded-br-[14px]" />
+     <div className="relative text-center py-6 px-4 my-2">
 
+      {/* Главное имя */}
       <h1
-        className="text-[52px] leading-[0.5] text-[#b68b3c]"
+        className="text-[64px] italic text-[#b68b3c] leading-none"
         style={{
           fontFamily: "var(--font-kz-ceremonious)",
-          textShadow: "0 2px 16px rgba(182,139,60,0.2)",
+          letterSpacing: "-1px",
         }}
       >
         Ақсезімнің
       </h1>
+
+      {/* Нижняя арка-линия */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] w-[50%]"
+        style={{
+          background: "linear-gradient(90deg, transparent, #b68b3c44, transparent)",
+        }}
+      />
     </div>
 
 
@@ -409,7 +532,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg2.png')" }}
+    style={{ backgroundImage: "url('/bg.png')" }}
   />
 
   {/* OVERLAY */}
