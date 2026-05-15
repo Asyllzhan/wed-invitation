@@ -1058,7 +1058,7 @@ export default function Home() {
   className="absolute inset-0 bg-cover"
   style={{
     backgroundImage: "url('/bg20.png')",
-    backgroundPosition: "0% 50%",  // или "0% 50%"
+    backgroundPosition: "0% 90%",  // или "0% 50%"
   }}
 />
 
