@@ -1613,7 +1613,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg28.png')" }}
+    style={{ backgroundImage: "url('/bg31.png')" }}
   />
 
   {/* OVERLAY */}
@@ -1736,7 +1736,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg29.png')" }} 
+    style={{ backgroundImage: "url('/bg32.png')" }} 
   />
 
   {/* OVERLAY */}
@@ -1930,7 +1930,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg30.png')" }}
+    style={{ backgroundImage: "url('/bg33.png')" }}
   />
 
   {/* OVERLAY */}
@@ -1967,8 +1967,7 @@ export default function Home() {
 />
 
   {/* CONTENT */}
-  <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
-
+  <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
     {/* Верхний орнамент */}
     <div className="flex items-center justify-center gap-3 mb-6">
       <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
