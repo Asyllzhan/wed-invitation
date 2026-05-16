@@ -152,6 +152,36 @@ export default function Home() {
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-[#ede6da]/80" />
 
+  
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
+
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
@@ -249,6 +279,37 @@ export default function Home() {
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
+
+    
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
+
 
     {/* Той иелері */}
     <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
@@ -410,6 +471,36 @@ export default function Home() {
 
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-[#ede6da]/70" />
+
+  
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
@@ -1061,8 +1152,9 @@ export default function Home() {
     style={{ backgroundImage: "url('/bg24.png')" }}
   />
 
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/0" />
+  {/* OVERLAY 
+  <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
+<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/50" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
@@ -1156,9 +1248,10 @@ export default function Home() {
     style={{ backgroundImage: "url('/bg25.png')" }} 
   />
 
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/0" />
+  {/* OVERLAY 
+  <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
 
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/30" />
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
@@ -1320,9 +1413,9 @@ export default function Home() {
     style={{ backgroundImage: "url('/bg24.png')" }}
   />
 
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/0" />
-
+  {/* OVERLAY 
+  <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/30" />
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
 
@@ -1512,31 +1605,48 @@ export default function Home() {
   </div>
 </section>
 
-<div
-  className="relative"
-  style={{
-    backgroundImage: "url('/bg23.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center top",
-    backgroundAttachment: "fixed",
-  }}
->
+
 
  {/* ================= PAGE 2 ================= */}
 <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
-  {/* BACKGROUND 
+  {/* BACKGROUND */}
   <div
-  className="absolute inset-0 bg-cover"
-  style={{
-    backgroundImage: "url('/bg20.png')",
-    backgroundPosition: "50% 0%",  // или "0% 50%"
-  }}
-/>*/}
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/bg28.png')" }}
+  />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/70" />
+  <div className="absolute inset-0 bg-[#ede6da]/80" />
 
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
@@ -1623,23 +1733,50 @@ export default function Home() {
 {/* ================= PAGE 3 ================= */}
 <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
-  {/* BACKGROUND 
+  {/* BACKGROUND */}
   <div
-  className="absolute inset-0 bg-cover"
-  style={{
-    backgroundImage: "url('/bg21.png')",
-    backgroundPosition: "45% 0%",  // или "0% 50%"
-  }}
-/>*/}
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/bg29.png')" }} 
+  />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-[#ede6da]/70" />
+  <div className="absolute inset-0 bg-[#ede6da]/80" />
+
+  
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
     {/* Той иелері */}
-    <p className="text-xl italic text-[#3a2810] tracking-wide mb-4">
+    <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
       Құрметпен, той иелері
     </p>
 
@@ -1790,17 +1927,44 @@ export default function Home() {
 {/* ================= PAGE 4 ================= */}
 <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
 
-  {/* BACKGROUND 
+  {/* BACKGROUND */}
   <div
-  className="absolute inset-0 bg-cover"
-  style={{
-    backgroundImage: "url('/bg22.png')",
-    backgroundPosition: "55% 0%",  // или "0% 50%"
-  }}
-/>*/}
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/bg30.png')" }}
+  />
 
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-[#ede6da]/70" />
+
+  
+  {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+  style={{
+    width: "180px",
+    height: "180px",
+    top: "-40px",
+    left: "-40px",
+    opacity: 0.18,
+    animation: "oyu-spin 20s linear infinite",
+  }}
+/>
+{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
+<img
+  src="/oyu1.png"
+  alt=""
+  className="absolute z-10"
+ style={{
+  width: "180px",
+  height: "180px",
+  bottom: "-40px",
+  right: "-40px",
+  opacity: 0.18,
+  animation: "oyu-spin 20s linear infinite",
+}}
+/>
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
@@ -1857,9 +2021,6 @@ export default function Home() {
     
   </div>
 </section>
-
-</div>
-
 
     </main>
   );
