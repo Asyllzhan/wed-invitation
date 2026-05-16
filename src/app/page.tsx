@@ -1154,7 +1154,7 @@ export default function Home() {
 
   {/* OVERLAY 
   <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
-<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/50 to-black/50" />
+<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/55 to-black/55" />
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
@@ -1251,7 +1251,7 @@ export default function Home() {
   {/* OVERLAY 
   <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
 
-  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/30" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40" />
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[420px] text-center px-6 py-16 text-black">
 
@@ -1415,7 +1415,7 @@ export default function Home() {
 
   {/* OVERLAY 
   <div className="absolute inset-0 bg-[#ede6da]/0" />*/}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/30" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40" />
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[360px] text-center px-6 py-16 text-black">
 
@@ -1629,7 +1629,7 @@ export default function Home() {
     height: "180px",
     top: "-40px",
     left: "-40px",
-    opacity: 0.18,
+    opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
 />
@@ -1643,7 +1643,7 @@ export default function Home() {
   height: "180px",
   bottom: "-40px",
   right: "-40px",
-  opacity: 0.18,
+  opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
 />
@@ -1753,7 +1753,7 @@ export default function Home() {
     height: "180px",
     top: "-40px",
     left: "-40px",
-    opacity: 0.18,
+    opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
 />
@@ -1767,7 +1767,7 @@ export default function Home() {
   height: "180px",
   bottom: "-40px",
   right: "-40px",
-  opacity: 0.18,
+  opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
 />
@@ -1947,7 +1947,7 @@ export default function Home() {
     height: "180px",
     top: "-40px",
     left: "-40px",
-    opacity: 0.18,
+    opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
 />
@@ -1961,7 +1961,7 @@ export default function Home() {
   height: "180px",
   bottom: "-40px",
   right: "-40px",
-  opacity: 0.18,
+  opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
 />
