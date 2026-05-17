@@ -1,14 +1,39 @@
 "use client";
 
+
+import { useEffect } from "react";
 import Countdown from "@/components/Countdown";
 import RSVP from "@/components/RSVP";
 import MusicPlayer from "@/components/MusicPlayer";
 import { motion } from "framer-motion"; // Если установил ран
 
+
+
+
 export default function Home() {
+
+  useEffect(() => {   // ← здесь, внутри Home
+    const elements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  
   return (
     <main className="bg-black text-white overflow-x-hidden scroll-smooth">
+      
+
       <MusicPlayer />
+      
       {/* ================= PAGE 1 ================= */}
 <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
 
@@ -97,7 +122,7 @@ export default function Home() {
 
     {/* Главное имя с золотым свечением */}
     <h1
-      className="text-[80px] leading-none text-white"
+      className="fade-up text-[80px] leading-none text-white"
       style={{
         fontFamily: "var(--font-kz-ceremonious)",
         textShadow: "0 0 60px rgba(182,139,60,0.55), 0 0 20px rgba(182,139,60,0.3)",
@@ -107,7 +132,7 @@ export default function Home() {
     </h1>
 
     {/* Subtitle */}
-    <p className="mt-4 text-[#e8d5a8] text-base tracking-[5px] uppercase font-light">
+    <p className="fade-up mt-4 text-[#e8d5a8] text-base tracking-[5px] uppercase font-light">
       Қыз ұзату
     </p>
 
@@ -122,7 +147,7 @@ export default function Home() {
     </div>
 
     {/* Дата */}
-    <p className="text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
+    <p className="fade-up text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
       24 Маусым 2026 · 19:00
     </p>
 
@@ -159,10 +184,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
   style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
+    width: "155px",
+    height: "155px",
+    top: "-15px",
+    left: "-15px",
     opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
@@ -173,10 +198,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
  style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
+  width: "155px",
+  height: "155px",
+  bottom: "-15px",
+  right: "-15px",
   opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
@@ -199,14 +224,14 @@ export default function Home() {
 
     {/* Құрметті */}
     <h2
-      className="text-5xl italic mb-6 font-light text-[#3a2810]"
-      style={{ letterSpacing: "2px" }}
+      className="fade-up text-5xl italic mb-6 font-light text-[#3a2810]"
+      style={{ letterSpacing: "2px", animationDelay: "0s" }}
     >
       Құрметті
     </h2>
 
     {/* Список гостей */}
-    <p className="text-[23px] leading-[40px] italic text-[#4a3520]">
+    <p className="fade-up text-[23px] leading-[40px] italic text-[#4a3520]" style={{ animationDelay: "0.2s" }}>
       Ағайын-туыс, бауырлар,<br />
       құда-жекжат,<br />
       нағашы-жиен, бөлелер,<br />
@@ -222,7 +247,7 @@ export default function Home() {
     </div>
 
     {/* Шақырту текст */}
-    <p className="text-[23px] italic text-[#4a3520] mb-1">
+    <p className="fade-up text-[23px] italic text-[#4a3520] mb-1">
       Сіздерді аяулы қызымыз
     </p>
    {/* Имя в карточке */}
@@ -230,7 +255,7 @@ export default function Home() {
 
       {/* Главное имя */}
       <h1
-        className="text-[64px] italic text-[#b68b3c] leading-none"
+        className="fade-up text-[64px] italic text-[#b68b3c] leading-none"
         style={{
           fontFamily: "var(--font-kz-ceremonious)",
           letterSpacing: "-1px",
@@ -249,7 +274,7 @@ export default function Home() {
     </div>
 
 
-    <p className="text-[23px] leading-[40px] italic text-[#4a3520] mt-5">
+    <p className="fade-up text-[23px] leading-[40px] italic text-[#4a3520] mt-5">
       Ұзату тойына арналған<br />
       салтанатты ақ дастарханымыздың<br />
       қадірлі қонағы болуға<br />
@@ -282,43 +307,16 @@ export default function Home() {
 
     
   {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
-<img
-  src="/oyu1.png"
-  alt=""
-  className="absolute z-10"
-  style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
-    opacity: 0.80,
-    animation: "oyu-spin 20s linear infinite",
-  }}
-/>
-{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
-<img
-  src="/oyu1.png"
-  alt=""
-  className="absolute z-10"
- style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
-  opacity: 0.80,
-  animation: "oyu-spin 20s linear infinite",
-}}
-/>
 
 
     {/* Той иелері */}
-    <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
+    <p className="fade-up text-xl italic text-[#3a2810] tracking-wide mb-4">
       Құрметпен, той иелері
     </p>
 
     <h2
-      className="text-3xl italic mb-6 font-light text-[#3a2810]"
-      style={{ letterSpacing: "2px" }}
+      className="fade-up text-3xl italic mb-6 font-light text-[#3a2810]"
+      style={{ letterSpacing: "2px", animationDelay: "0.4s" }}
     >
       Бақытжан-Мадина
     </h2>
@@ -330,13 +328,13 @@ export default function Home() {
       <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/50" />
     </div>
 
-    <h2 className="text-2xl italic mb-4 font-light text-[#3a2810]">
+    <h2 className="fade-up text-2xl italic mb-4 font-light text-[#3a2810]">
       Той салтанаты:
     </h2>
 {/* ===== ДАТА + КАЛЕНДАРЬ + ВРЕМЯ ===== */}
 
 {/* Текст даты */}
-<p className="text-2xl italic text-[#3a2810] mb-6">
+<p className="fade-up text-2xl italic text-[#3a2810] mb-6">
   24 Маусым 2026
 </p>
 
@@ -400,16 +398,16 @@ export default function Home() {
 </div>
 
 {/* Время снизу */}
-<p className="text-2xl italic text-[#3a2810]">
+<p className="fade-up text-2xl italic text-[#3a2810]">
   Сағат 19:00-де
 </p>
-<p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
+<p className="fade-up uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
        
     </p>
 
 
     {/* Мекенжайы */}
-    <h2 className="text-2xl italic mb-5 font-light text-[#3a2810]">
+    <h2 className="fade-up text-2xl italic mb-5 font-light text-[#3a2810]">
       Мекенжайы
     </h2>
 
@@ -434,8 +432,8 @@ export default function Home() {
         </svg>
       </div>
       <div>
-        <p className="text-[17px] italic font-medium text-[#3a2810] leading-tight">Qobyz    мейрамханасы</p>
-        <p className="text-[13px] text-[#7a5c30] italic leading-snug mt-0.5">
+        <p className="fade-up text-[17px] italic font-medium text-[#3a2810] leading-tight">Qobyz    мейрамханасы</p>
+        <p className="fade-up text-[13px] text-[#7a5c30] italic leading-snug mt-0.5">
           Тараз қаласы,<br />Әл-Фараби көшесі 68
         </p>
       </div>
@@ -479,10 +477,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
   style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
+    width: "155px",
+    height: "155px",
+    top: "-15px",
+    left: "-15px",
     opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
@@ -493,10 +491,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
  style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
+  width: "155px",
+  height: "155px",
+  bottom: "-15px",
+  right: "-15px",
   opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
@@ -514,7 +512,7 @@ export default function Home() {
       <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
     </div>
 
-    <p className="text-[20px] italic leading-relaxed text-[#4a3520] mb-6">
+    <p className="fade-up text-[20px] italic leading-relaxed text-[#4a3520] mb-6">
       Тойға келетініңізді<br />
       растауыңызды сұраймыз
     </p>
@@ -646,7 +644,7 @@ export default function Home() {
 
     {/* Главное имя с золотым свечением */}
     <h1
-      className="text-[80px] leading-none text-white"
+      className="fade-up text-[80px] leading-none text-white"
       style={{
         fontFamily: "var(--font-kz-ceremonious)",
         textShadow: "0 0 60px rgba(182,139,60,0.55), 0 0 20px rgba(182,139,60,0.3)",
@@ -671,7 +669,7 @@ export default function Home() {
     </div>
 
     {/* Дата */}
-    <p className="text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
+    <p className="fade-up text-[#d4c4a0] tracking-[4px] uppercase text-[12px]">
       24 Маусым 2026 · 19:00
     </p>
 
@@ -708,11 +706,11 @@ export default function Home() {
   alt=""
   className="absolute z-10"
   style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
-    opacity: 0.18,
+    width: "155px",
+    height: "155px",
+    top: "-15px",
+    left: "-15px",
+    opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
 />
@@ -722,11 +720,11 @@ export default function Home() {
   alt=""
   className="absolute z-10"
  style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
-  opacity: 0.18,
+  width: "155px",
+  height: "155px",
+  bottom: "-15px",
+  right: "-15px",
+  opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
 />
@@ -747,14 +745,14 @@ export default function Home() {
 
     {/* Құрметті */}
     <h2
-      className="text-5xl italic mb-6 font-light text-[#3a2810]"
+      className="fade-up text-5xl italic mb-6 font-light text-[#3a2810]"
       style={{ letterSpacing: "2px" }}
     >
       Құрметті
     </h2>
 
     {/* Список гостей */}
-    <p className="text-[23px] leading-[40px] italic text-[#4a3520]">
+    <p className="fade-up text-[23px] leading-[40px] italic text-[#4a3520]">
       Ағайын-туыс, бауырлар,<br />
       құда-жекжат,<br />
       нағашы-жиен, бөлелер,<br />
@@ -770,7 +768,7 @@ export default function Home() {
     </div>
 
     {/* Шақырту текст */}
-    <p className="text-[23px] italic text-[#4a3520] mb-1">
+    <p className="fade-up text-[23px] italic text-[#4a3520] mb-1">
       Сіздерді аяулы қызымыз
     </p>
    {/* Имя в карточке */}
@@ -778,7 +776,7 @@ export default function Home() {
 
       {/* Главное имя */}
       <h1
-        className="text-[64px] italic text-[#b68b3c] leading-none"
+        className="fade-up text-[64px] italic text-[#b68b3c] leading-none"
         style={{
           fontFamily: "var(--font-kz-ceremonious)",
           letterSpacing: "-1px",
@@ -819,7 +817,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg35.png')" }} 
+    style={{ backgroundImage: "url('/bg37.png')" }} 
   />
 
   {/* OVERLAY */}
@@ -827,39 +825,13 @@ export default function Home() {
 
   
   {/* ОЮ — крутящийся орнамент в левом верхнем углу */}
-<img
-  src="/oyu1.png"
-  alt=""
-  className="absolute z-10"
-  style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
-    opacity: 0.18,
-    animation: "oyu-spin 20s linear infinite",
-  }}
-/>
-{/* ОЮ — крутящийся орнамент в левом верхнем углу */}
-<img
-  src="/oyu1.png"
-  alt=""
-  className="absolute z-10"
- style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
-  opacity: 0.80,
-  animation: "oyu-spin 20s linear infinite",
-}}
-/>
+
 
   {/* CONTENT */}
   <div className="relative z-10 w-full max-w-[480px] text-center px-6 py-16 text-black">
 
     {/* Той иелері */}
-    <p className="text-xl italic text-[#7a5c30] tracking-wide mb-4">
+    <p className="text-xl italic text-[#3a2810] tracking-wide mb-4">
       Құрметпен, той иелері
     </p>
 
@@ -877,13 +849,13 @@ export default function Home() {
       <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#b68b3c]/50" />
     </div>
 
-    <h2 className="text-2xl italic mb-4 font-light text-[#3a2810]">
+    <h2 className="fade-up text-2xl italic mb-4 font-light text-[#3a2810]">
       Той салтанаты:
     </h2>
 {/* ===== ДАТА + КАЛЕНДАРЬ + ВРЕМЯ ===== */}
 
 {/* Текст даты */}
-<p className="text-2xl italic text-[#3a2810] mb-6">
+<p className="fade-up text-2xl italic text-[#3a2810] mb-6">
   24 Маусым 2026
 </p>
 
@@ -947,16 +919,16 @@ export default function Home() {
 </div>
 
 {/* Время снизу */}
-<p className="text-2xl italic text-[#3a2810]">
+<p className="fade-up text-2xl italic text-[#3a2810]">
   Сағат 19:00-де
 </p>
-<p className="uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
+<p className="fade-up uppercase tracking-[8px] text-[11px] text-[#c9a96e] mb-10">
        
     </p>
 
 
     {/* Мекенжайы */}
-    <h2 className="text-2xl italic mb-5 font-light text-[#3a2810]">
+    <h2 className="fade-up text-2xl italic mb-5 font-light text-[#3a2810]">
       Мекенжайы
     </h2>
 
@@ -1026,10 +998,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
   style={{
-    width: "160px",
-    height: "160px",
-    top: "-20px",
-    left: "-20px",
+    width: "155px",
+    height: "155px",
+    top: "-15px",
+    left: "-15px",
     opacity: 0.80,
     animation: "oyu-spin 20s linear infinite",
   }}
@@ -1040,10 +1012,10 @@ export default function Home() {
   alt=""
   className="absolute z-10"
  style={{
-  width: "160px",
-  height: "160px",
-  bottom: "-20px",
-  right: "-20px",
+  width: "155px",
+  height: "155px",
+  bottom: "-15px",
+  right: "-15px",
   opacity: 0.80,
   animation: "oyu-spin 20s linear infinite",
 }}
@@ -1060,7 +1032,7 @@ export default function Home() {
       <div className="w-10 h-[1px] bg-[#b68b3c]/50" />
     </div>
 
-    <p className="text-[20px] italic leading-relaxed text-[#4a3520] mb-6">
+    <p className="fade-up text-[20px] italic leading-relaxed text-[#4a3520] mb-6">
       Тойға келетініңізді<br />
       растауыңызды сұраймыз
     </p>

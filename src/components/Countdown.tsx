@@ -11,6 +11,22 @@ export default function Countdown() {
     minutes: 0,
     seconds: 0,
   });
+  
+  useEffect(() => {   // ← здесь, внутри Home
+    const elements = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,7 +56,7 @@ export default function Countdown() {
   return (
     <div className="text-center text-black">
 
-      <h2 className="text-2xl italic mb-6 font-light text-[#3a2810]">
+      <h2 className="fade-up text-2xl italic mb-6 font-light text-[#3a2810]">
         Той салтанатына дейін:
       </h2>
 
