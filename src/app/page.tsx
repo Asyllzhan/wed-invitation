@@ -296,7 +296,7 @@ export default function Home() {
   {/* BACKGROUND */}
   <div
     className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg35.png')" }} 
+    style={{ backgroundImage: "url('/bg37.png')" }} 
   />
 
   {/* OVERLAY */}
