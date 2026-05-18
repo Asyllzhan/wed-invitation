@@ -11,13 +11,13 @@ export default function RSVP() {
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async () => {
-    if (!name) return;
+    if (!name.trim()) return;
 
     try {
       setLoading(true);
 
       await addDoc(collection(db, "guests"), {
-        name,
+        name: name.trim(),
         attendance,
         createdAt: new Date(),
       });

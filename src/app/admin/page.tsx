@@ -254,7 +254,7 @@ export default function AdminPage() {
         {/* GUESTS LIST */}
         <div className="space-y-4">
 
-          {guests.map((g) => (
+          {[...guests].reverse().map((g) => (
             <div
               key={g.id}
               className="
