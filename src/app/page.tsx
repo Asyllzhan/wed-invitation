@@ -251,11 +251,11 @@ export default function Home() {
       Сіздерді аяулы қызымыз
     </p>
    {/* Имя в карточке */}
-     <div className="relative text-center py-6 px-4 my-2">
+     <div className="fade-up relative text-center py-6 px-4 my-2">
 
       {/* Главное имя */}
       <h1
-        className="fade-up text-[64px] italic text-[#b68b3c] leading-none"
+        className="text-[64px] italic text-[#b68b3c] leading-none"
         style={{
           fontFamily: "var(--font-kz-ceremonious)",
           letterSpacing: "-1px",

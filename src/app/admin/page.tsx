@@ -193,7 +193,7 @@ export default function AdminPage() {
           <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
 
             <p className="text-neutral-500 italic mb-2">
-              Барлығы
+              Толтырылған жауаптар
             </p>
 
             <h2 className="text-4xl font-light text-black">
@@ -205,7 +205,7 @@ export default function AdminPage() {
           <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
 
             <p className="text-neutral-500 italic mb-2">
-              Қатысады
+              Бір өзі келеді
             </p>
 
             <h2 className="text-4xl font-light text-black">
@@ -217,7 +217,7 @@ export default function AdminPage() {
           <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
 
             <p className="text-neutral-500 italic mb-2">
-              Жұбайымен
+              Жұбайымен келеді
             </p>
 
             <h2 className="text-4xl font-light text-black">
@@ -229,7 +229,7 @@ export default function AdminPage() {
           <div className="bg-white/60 rounded-[30px] p-6 backdrop-blur-md">
 
             <p className="text-neutral-500 italic mb-2">
-              Адам саны
+              Келетін адам саны
             </p>
 
             <h2 className="text-4xl font-light text-black">

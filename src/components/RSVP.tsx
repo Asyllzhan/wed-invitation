@@ -136,7 +136,7 @@ export default function RSVP() {
                 className="hidden"
               />
 
-              <span className="italic text-[15px] text-[#3a2810]">
+              <span className="italic text-[14px] text-[#3a2810]">
                 {opt.label}
               </span>
             </label>
